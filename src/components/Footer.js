@@ -5,7 +5,7 @@ import {Navbar,
 class Footer extends Component {
     render() {
         return (
-            <Navbar bg="dark" variant="dark" className="footer">
+            <Navbar  bg="dark" variant="dark" className="footer">
             <Container>
               <Navbar.Brand href="#home">
                 <img
