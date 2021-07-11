@@ -179,6 +179,7 @@ html,body{
   box-shadow: -4px -4px 8px rgba(190, 190, 190, 0.5);
 }
 
+
 .home-top-background-section .carousel-item{
   height: 40rem;
 }
@@ -221,3 +222,4 @@ html,body{
   text-shadow: 0 0 4px rgb(255, 255, 255);
   font-weight: 600;
 }
+
