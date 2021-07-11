@@ -147,3 +147,40 @@ html,body{
   border-radius: 10px;
   box-shadow: -4px -4px 8px rgba(190, 190, 190, 0.5);
 }
+
+/* ----------------- contact-us component css for form ------------------  */
+.contactus-img{
+  width:100%;
+}
+.mb-3{
+  background-color: antiquewhite;
+font-weight: bold;
+  margin: 5%;
+  width: 50%;
+}
+.form-text{
+margin-left: 10%;
+}
+.form-control{
+  border-radius: 5px;
+  box-shadow: -4px -4px 8px rgba(190, 190, 190, 0.5); 
+}
+.div-in-contactus{
+  width: 100%;
+  position: relative;
+}
+.text-above-img1{
+  position: absolute;
+  top: 200px;
+  left: 390px;
+  right: 50px;
+  color: white;
+  font-size: 60px;
+}
+.contactus-form-button{
+  background-color: rgba(255, 196, 0, 0.829);
+  border: rgba(255, 196, 0, 0.829);
+  color: black;
+  margin-left: 54px;
+}
+/* ----------------------------------------------------------- */

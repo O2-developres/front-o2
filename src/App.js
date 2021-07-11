@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ContactUs from './components/ContactUs';
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -16,7 +17,8 @@ class App extends Component {
             <Route exact path="/">
               <Home/>
             </Route>
-            <Route path="/">
+            <Route path="/ContactUs">
+              <ContactUs/>
             </Route>
           </Switch>
       </Router>

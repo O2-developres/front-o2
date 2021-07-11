@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import {Navbar,
-    Container
+    Container,
+    Nav
 } from 'react-bootstrap'
+import { Link } from "react-router-dom";
+
 class Footer extends Component {
     render() {
         return (
@@ -16,6 +19,10 @@ class Footer extends Component {
                   alt="React Bootstrap logo"
                 />
               </Navbar.Brand>
+              <Nav.Link href="#Header"><Link to="/ContactUs">Contact Us</Link></Nav.Link>
+
+              <Nav.Link href="#pricing"><Link to="/">About Us</Link></Nav.Link>
+
             </Container>
             </Navbar>
         )
