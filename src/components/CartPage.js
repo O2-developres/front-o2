@@ -35,7 +35,10 @@ export class Cart extends Component {
         priceImg:e.target.value,
     })
   }
+  //  =================== this function will used in store page 
   createBook= async(e)=>{
+
+  //  email= ${this.props.auth0.user.email} also env for link 
     e.preventDefault();
     const reqBody={
       nameImg: this.state.imgName,
@@ -52,25 +55,30 @@ export class Cart extends Component {
     window.location.reload()
 
 }
+// ======================================== end for function store 
+
   componentDidMount = async () => {
     // let url = `http://localhost:8000/gallary?q=paint`;
     // const axiosData = await axios.get(url);
 
     // let url2 = `http://localhost:8000/news?q=america`;
     // const axiosData2 = await axios.get(url2);
-    let url3 = `http://localhost:8000/profile?email=anofal719@gmail.com`;
-    const axiosData3 = await axios.get(url3);
-    let url4 = `http://localhost:8000/store`;
-    const axiosData4 = await axios.get(url4);
+    // let url4 = `http://localhost:8000/store`;
+    // const axiosData4 = await axios.get(url4);
+    // for (let i=0 ;i<10;i++ ){
 
-    console.log(axiosData3);
-
-    for (let i=0 ;i<10;i++ ){
-
-      console.log(axiosData4.data[i]);
-    }
+    //   console.log(axiosData4.data[i]);
+    // }
     // console.log(axiosData2);
     // console.log(axiosData);
+
+
+
+   //  email= ${this.props.auth0.user.email} also env for link 
+    let url3 = `http://localhost:8000/profile?email=anofal719@gmail.com`;
+    const axiosData3 = await axios.get(url3);
+    console.log(axiosData3);
+
     this.setState({
     //   listGallary: axiosData.data,
       listUser: axiosData3.data.cart,
@@ -80,9 +88,9 @@ export class Cart extends Component {
 
 
   };
-
+//  ===============================  start for delete Cart
   deletCart = (indx) => {
-
+//  email= ${this.props.auth0.user.email} also env for link
     axios
       .delete(`http://localhost:8000/cart/${indx}?email=anofal719@gmail.com`)
       .then((res) => {
@@ -92,6 +100,8 @@ export class Cart extends Component {
       });
       window.location.reload()
   };
+
+  //  ===============================  end for delete Cart
   render() {
     return (
       <>
@@ -146,7 +156,7 @@ export class Cart extends Component {
                   </>
                 );
               })}
-<form onSubmit={(e)=>{this.createBook(e)}}>
+          <form onSubmit={(e)=>{this.createBook(e)}}>
           <input type="text" onChange={(e)=>{this.getInputName(e)}} required placeholder='name '/><br/>
 
           <input type="text" onChange={(e)=>{this.getInputImg(e)}} required placeholder='img '/>
