@@ -22,7 +22,6 @@ class App extends Component {
             <Route path="/ContactUs">
               <ContactUs/>
             </Route>
-
             <Route path="/Profile">
               <Profile/>
             </Route>

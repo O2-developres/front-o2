@@ -46,7 +46,7 @@ class Header extends Component {
                     <Navbar.Brand href="#home"><Link to="/">O2 Arts</Link></Navbar.Brand>
                     <Nav className="me-auto">
                     <Nav.Link href="#home"><Link to="/">Home</Link></Nav.Link>
-                    <Nav.Link href="#pricing"><Link to="/">Store</Link></Nav.Link>
+                    <Nav.Link href="#pricing"><Link to="/Store">Store</Link></Nav.Link>
                     <Nav.Link href="#features"><Link to="/Profile">Profile</Link></Nav.Link>
                     <Nav.Link href="#features"><Link to="/">Sign in</Link></Nav.Link>
                     <Nav.Link href="#features"><Link to="/CartPage">Cart</Link></Nav.Link>
