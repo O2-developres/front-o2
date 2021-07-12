@@ -8,6 +8,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home';
+import AboutUs from './components/AboutUs';
 class App extends Component {
   render() {
     return (
@@ -20,7 +21,11 @@ class App extends Component {
             <Route path="/ContactUs">
               <ContactUs/>
             </Route>
+            <Route path="/AboutUs">
+              <AboutUs/>
+            </Route>
           </Switch>
+
       </Router>
     </>
     )

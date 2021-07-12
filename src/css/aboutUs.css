@@ -1,0 +1,74 @@
+.MV{
+    margin-top:150px;
+   text-align: center;
+   width: 100%;
+   /* margin-right: 30px; */
+   float: right;
+   background-color:rgba(165, 158, 158, 0.781) ;
+
+ 
+}
+
+
+
+.cardplus{
+    margin-bottom: 40px;
+    display: inline-block;
+    /* background-image: url('https://thumbs.dreamstime.com/b/alcohol-ink-texture-fluid-abstract-background-art-design-131606737.jpg'); */
+    border: rgb(244, 229, 96) 2px solid;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: fit-content;
+    margin-left: 200px;
+}
+
+.names{
+    margin-top: 60px;
+    margin-right: 200px;
+    width: 100%;
+    text-align: center;
+    background-color:rgba(165, 158, 158, 0.781) ;
+
+}
+
+.mayada{
+    margin-left: 530px;
+}
+
+.body{
+    font-size:large;
+    color:rgb(70, 66, 71);
+    /* background-image: url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80'); */
+    background-image: url(https://cdn.hipwallpaper.com/i/56/56/F4fW2H.jpg); 
+    /* background-repeat: no-repeat;   */
+    
+ }
+  
+ .github , .linkdin {
+ margin-left: 50px;
+ display: inline-block;
+ }
+
+ .cardm , .cardv{
+     margin-right: 10px;
+     color: black;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+ }
+
+
+ .animatedBox {
+    width: fit-content;
+    padding: 20px;
+    text-align: center;
+    font: 24px sans-serif;
+    border-style: solid;
+    border-width: 20px;
+    border-color: lemonchiffon;
+    animation: myAnimation 6s linear 1s 1 forwards;
+  }
+  
+  @keyframes myAnimation {
+    100% {
+      border-color: yellowgreen orange olive gold;
+    }	
+  }
