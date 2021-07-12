@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { withAuth0 } from "@auth0/auth0-react";
+import Login from './Login';
 import {
     Navbar, 
     Container,
@@ -48,7 +50,7 @@ class Header extends Component {
                     <Nav.Link href="#home"><Link to="/">Home</Link></Nav.Link>
                     <Nav.Link href="#pricing"><Link to="/">Store</Link></Nav.Link>
                     <Nav.Link href="#features"><Link to="/">Profile</Link></Nav.Link>
-                    <Nav.Link href="#features"><Link to="/">Sign in</Link></Nav.Link>
+                    <Nav.Link href="#features"><Link to="/"><Login/></Link></Nav.Link>
                     <Nav.Link href="#features"><Link to="/CartPage">Cart</Link></Nav.Link>
 
                     </Nav>
@@ -59,4 +61,4 @@ class Header extends Component {
     }
 }
 
-export default Header
+export default withAuth0(Header) 

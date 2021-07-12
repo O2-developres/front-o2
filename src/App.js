@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { withAuth0 } from "@auth0/auth0-react";
 import ContactUs from './components/ContactUs';
 import CartPage from './components/CartPage';
 import './App.css'
@@ -11,6 +12,7 @@ import {
 import Home from './components/Home';
 class App extends Component {
   render() {
+    console.log(this.props.auth0);
     return (
       <>
       <Router>
@@ -24,6 +26,7 @@ class App extends Component {
             <Route path="/CartPage">
               <CartPage/>
             </Route>
+            
           </Switch>
       </Router>
     </>
@@ -31,5 +34,5 @@ class App extends Component {
   }
 }
 
-export default App
+export default withAuth0(App) 
 
