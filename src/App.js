@@ -9,6 +9,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home';
+import Profile from './components/Profile';
 class App extends Component {
   render() {
     return (
@@ -20,6 +21,10 @@ class App extends Component {
             </Route>
             <Route path="/ContactUs">
               <ContactUs/>
+            </Route>
+
+            <Route path="/Profile">
+              <Profile/>
             </Route>
             <Route path="/CartPage">
               <CartPage/>

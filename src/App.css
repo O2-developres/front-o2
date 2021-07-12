@@ -2,6 +2,7 @@
 html,body{
   background-color: #ffffff;
   background-size: cover;
+  overflow-x: hidden;
 }
 :root{
   --header-height: 3rem;
@@ -105,9 +106,10 @@ html,body{
   background-color: var(--first-color-alt);
 }
 .home-headings{
-  display: contents;
+  display: block;
   text-align: center;
-  margin-bottom: var(--mb-3);
+  margin-bottom: 2rem;
+  padding: 60px;
 }
 .home-headings h1{
   color: var(--first-color);
@@ -182,9 +184,11 @@ html,body{
 
 .home-top-background-section .carousel-item{
   height: 40rem;
+  width: 100%;
 }
 .home-top-background-section img{
   filter: blur(6px);
+  width:1351px;
 }
 .home-top-background-section .carousel-caption{
   right: 60%;
@@ -223,3 +227,127 @@ html,body{
   font-weight: 600;
 }
 
+.home-qouts-section{
+  padding: 10px;
+}
+.home-qouts-section .card{
+  border: none;
+  text-align: center;
+
+}
+.home-qouts-section .card-img{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  box-shadow:-3px -3px 4px 1px rgba(0, 0, 0, 0.479) ;
+}
+.home-qouts-section .card-title{
+  font-family: var(--FF-Rubik);
+}
+.home-qouts-section .card-text{
+  font-family: var(--FF-Uchen);
+}
+/* footer section */
+.footer{
+  background-color: black;
+  color: var(--first-color);
+}
+.footer .container{
+  width: 100%;
+  padding: 0;
+}
+.full-width{
+  width: 100%;
+  padding: 0px;
+  margin-left: 60px;
+}
+.footer-title{
+  font-size: var(--h2-font-size);
+  font-weight: 700;
+}
+.break-line-footer{
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.041);
+  width: 100%;
+}
+
+.footer-contact-list{
+  list-style: none;
+  margin-left: -2.5rem;
+}
+.footer-contact-list svg{
+  margin-right: 10px;
+}
+.footer-contact-list-social {
+  margin-left: -80px;
+}
+.footer-contact-list a{
+  text-decoration: none;
+  color: var(--first-color);
+}
+.footer-contact-list a:hover,
+.footer-contact-list-social a:hover{
+  color: var(--first-color-lighter);
+}
+.footer-contact-list-social li{
+  display: inline;
+  margin: 0 15px 0 30px;
+}
+.footer-contact-list-social a{
+  text-decoration: none;
+  color: var(--first-color);
+}
+.footer-contact-list-social a svg{
+  font-size: 3.4rem;
+}
+.copy-right{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: -30px;
+}
+.copy-right p{
+  color: white;
+}
+.copy-right span{
+  color: var(--first-color);
+}
+
+
+
+
+/* ----------------- contact-us component css for form ------------------  */
+.contactus-img{
+  width:100%;
+}
+.mb-3{
+  background-color: antiquewhite;
+font-weight: bold;
+  margin: 5%;
+  width: 50%;
+}
+.form-text{
+margin-left: 10%;
+}
+.form-control{
+  border-radius: 5px;
+  box-shadow: -4px -4px 8px rgba(190, 190, 190, 0.5); 
+}
+.div-in-contactus{
+  width: 100%;
+  position: relative;
+}
+.text-above-img1{
+  position: absolute;
+  top: 200px;
+  left: 390px;
+  right: 50px;
+  color: white;
+  font-size: 60px;
+}
+.contactus-form-button{
+  background-color: rgba(255, 196, 0, 0.829);
+  border: rgba(255, 196, 0, 0.829);
+  color: black;
+  margin-left: 54px;
+}
