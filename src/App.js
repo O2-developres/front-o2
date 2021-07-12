@@ -26,12 +26,13 @@ class App extends Component {
             </Route>
 
             <Route path="/Profile">
-              <Profile/>
+              {this.props.auth0.isAuthenticated && <Profile />}
             </Route>
             <Route path="/CartPage">
-              <CartPage/>
+              {this.props.auth0.isAuthenticated && <CartPage/>}
+              
             </Route>
-            
+           
           </Switch>
       </Router>
     </>
