@@ -20,6 +20,10 @@ import img3 from '../Images/home-top3.jpg'
 import img4 from '../Images/home-top4.jpg'
 import artist1 from '../Images/home-artist1.jpg'
 import artist2 from '../Images/home-artist2.jpg'
+import artistPic1 from '../Images/artist1.jpg'
+import artistPic2 from '../Images/artist2.jpg'
+import artistPic3 from '../Images/artist3.jpg'
+import artistPic4 from '../Images/artist4.jpg'
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -44,7 +48,7 @@ class Home extends Component {
                                     alt="First slide"
                                 />
                                 <img
-                                className="d-block w-100"
+                                className="d-block"
                                 src={img1} 
                                 alt="First slide"
                                 />
@@ -59,7 +63,7 @@ class Home extends Component {
                                     alt="First slide"
                                 />
                                 <img
-                                className="d-block w-100"
+                                className="d-block "
                                 src={img3}
                                 alt="Second slide"
                                 />
@@ -74,7 +78,7 @@ class Home extends Component {
                                     alt="First slide"
                                 />
                                 <img
-                                className="d-block w-100"
+                                className="d-block "
                                 src={img2}
                                 alt="Third slide"
                                 />
@@ -154,8 +158,7 @@ class Home extends Component {
                     </Row>
                     <hr className="break-line"></hr>
                     <Row className="home-headings">
-                        <h1>test</h1>
-                        <p>testt</p>
+                        <h1>What you can do</h1>
                     </Row>
                     <Row>
                         <Container className="home-future">
@@ -163,7 +166,7 @@ class Home extends Component {
                                 <Col >
                                     <Fade left>
                                         <div className="home-future-para">
-                                            <h3 className="home-future-para-h3">title</h3>
+                                            <h3 className="home-future-para-h3">Profile</h3>
                                             <p className="home-future-p">sub-title</p>
                                         </div>
                                     </Fade>
@@ -191,7 +194,7 @@ class Home extends Component {
                                 <Col>
                                     <Fade right>
                                         <div className="home-future-para">
-                                                <h3 className="home-future-para-h3">title</h3>
+                                                <h3 className="home-future-para-h3">Posts</h3>
                                                 <p className="home-future-p">sub-title</p>
                                             </div>
                                     </Fade >
@@ -201,7 +204,7 @@ class Home extends Component {
                                 <Col>
                                     <Fade left>
                                         <div className="home-future-para">
-                                            <h3 className="home-future-para-h3">title</h3>
+                                            <h3 className="home-future-para-h3">Cart</h3>
                                             <p className="home-future-p">sub-title</p>
                                         </div>
                                     </Fade>
@@ -219,26 +222,45 @@ class Home extends Component {
                         </Container>
                     </Row>
                     <Row className="home-headings">
-                        <h1>test</h1>
-                        <p>testt</p>
+                        <h1>Need some Inspiration?</h1>
+                        <p>Every artist, beginner or professional, will need a little pick-me-up once in a while, to get over a bad piece of work they thought would turn out well or to overcome artist’s block. Here are inspirational art quotes, from painters to philosophers, from scientists to photographers.</p>
                     </Row>
                     <Row className="home-qouts-section">
                         <Col>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Body>
+                                    <Card.Img  
+                                        src={artistPic1}
+                                    />
                                     <Card.Title>
                                         <LightSpeed left cascade>
-                                        Card Title
+                                       Dario Fo
                                         </LightSpeed>
                                         </Card.Title>
                                     <Card.Text>
                                     <LightSpeed left cascade>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                   "While drawing I discover what I really want to say." 
                                     </LightSpeed>
                                     </Card.Text>
-                                    <Card.Link href="#">Card Link</Card.Link>
-                                    <Card.Link href="#">Another Link</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col>
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Body>
+                                <Card.Img  
+                                        src={artistPic2}
+                                    />
+                                    <Card.Title>
+                                        <LightSpeed left cascade>
+                                       Michelangelo
+                                        </LightSpeed>
+                                        </Card.Title>
+                                    <Card.Text>
+                                    <LightSpeed left cascade>
+                                    "If people only knew how hard I work to gain my mastery. It wouldn't seem so wonderful at all."
+                                    </LightSpeed>
+                                    </Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -246,56 +268,37 @@ class Home extends Component {
                             <Card style={{ width: '18rem' }}>
                                 <Card.Body>
                                     <Card.Title>
+                                    <Card.Img  
+                                        src={artistPic3}
+                                    />
                                         <LightSpeed left cascade>
-                                        Card Title
+                                        Chuck Close
                                         </LightSpeed>
                                         </Card.Title>
                                     <Card.Text>
                                     <LightSpeed left cascade>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    "Inspiration is for amateurs. The rest of us just show up and get the work done."
                                     </LightSpeed>
                                     </Card.Text>
-                                    <Card.Link href="#">Card Link</Card.Link>
-                                    <Card.Link href="#">Another Link</Card.Link>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Body>
+                                <Card.Img  
+                                        src={artistPic4}
+                                    />
                                     <Card.Title>
                                         <LightSpeed left cascade>
-                                        Card Title
+                                        Paul Cezanne
                                         </LightSpeed>
                                         </Card.Title>
                                     <Card.Text>
                                     <LightSpeed left cascade>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    "A work of art which did not begin in emotion is not art."
                                     </LightSpeed>
                                     </Card.Text>
-                                    <Card.Link href="#">Card Link</Card.Link>
-                                    <Card.Link href="#">Another Link</Card.Link>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Body>
-                                    <Card.Title>
-                                        <LightSpeed left cascade>
-                                        Card Title
-                                        </LightSpeed>
-                                        </Card.Title>
-                                    <Card.Text>
-                                    <LightSpeed left cascade>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                    </LightSpeed>
-                                    </Card.Text>
-                                    <Card.Link href="#">Card Link</Card.Link>
-                                    <Card.Link href="#">Another Link</Card.Link>
                                 </Card.Body>
                             </Card>
                         </Col>
