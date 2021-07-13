@@ -12,11 +12,8 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home';
-
 import AboutUs from './components/AboutUs';
-
 import Profile from './components/Profile';
-
 import Store from './components/Store';
 import Admin from './components/Admin';
 
