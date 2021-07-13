@@ -119,7 +119,11 @@ class Footer extends Component {
               </Navbar.Brand>
               <Nav.Link href="#Header"><Link to="/ContactUs">Contact Us</Link></Nav.Link>
 
+
+              <Nav.Link href="#pricing"><Link to="/AboutUs">About Us</Link></Nav.Link>
+
               <Nav.Link href="#pricing"></Nav.Link> */}
+
 
             </Container>
             </footer>

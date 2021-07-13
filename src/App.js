@@ -10,8 +10,13 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home';
+
+import AboutUs from './components/AboutUs';
+
 import Profile from './components/Profile';
+
 import Store from './components/Store';
+
 class App extends Component {
   render() {
     console.log(this.props.auth0);
@@ -25,6 +30,10 @@ class App extends Component {
             <Route path="/ContactUs">
               <ContactUs/>
             </Route>
+            <Route path="/AboutUs">
+              <AboutUs/>
+            </Route>
+
             <Route path="/Profile">
               {this.props.auth0.isAuthenticated && <Profile />}
             </Route>
@@ -36,7 +45,9 @@ class App extends Component {
               <Store/>
             </Route>
            
+
           </Switch>
+
       </Router>
     </>
     )
