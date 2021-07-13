@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import Profile from './components/Profile';
+import Store from './components/Store';
 class App extends Component {
   render() {
     console.log(this.props.auth0);
@@ -24,13 +25,15 @@ class App extends Component {
             <Route path="/ContactUs">
               <ContactUs/>
             </Route>
-
             <Route path="/Profile">
               {this.props.auth0.isAuthenticated && <Profile />}
             </Route>
             <Route path="/CartPage">
               {this.props.auth0.isAuthenticated && <CartPage/>}
               
+            </Route>
+            <Route path="/Store">
+              <Store/>
             </Route>
            
           </Switch>
