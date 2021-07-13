@@ -4,7 +4,6 @@ import { withAuth0 } from "@auth0/auth0-react";
 import ContactUs from './components/ContactUs';
 import CartPage from './components/CartPage';
 import GalleryPage from './components/GalleryPage';
-import 'mdbreact/dist/css/mdb.css';
 import './App.css'
 import {
   BrowserRouter as Router,
