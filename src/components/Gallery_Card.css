@@ -1,0 +1,139 @@
+
+.gallery-card-class {
+    
+ 
+  
+    transition: transform .1s;
+    box-sizing: border-box;
+  
+  
+ 
+   
+}
+
+.gallery-card-class:hover{
+  
+    -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);  
+}
+
+.top-gallery-card{
+    position: absolute;
+margin-top: 50px;
+
+
+
+}
+.wrapper {
+    padding: 50px 50px;
+    max-width: 1200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+
+/* Image zoom on hover + Overlay colour */
+.parentgallery {
+  
+ 
+   
+  
+    border: 1px solid wheat;
+    overflow: hidden;
+    position: relative;
+    /* float: left; */
+    display: inline-block;
+  cursor: pointer;
+}
+
+.childgallery {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+/* Several different images */
+/* .bg-one {background-image: url(https://media.timeout.com/images/101602611/image.jpg);}
+.bg-two {background-image: url(http://s1.it.atcdn.net/wp-content/uploads/2015/08/2-London.jpg);}
+.bg-three {background-image: url(https://media.timeout.com/images/101484105/image.jpg);}
+.bg-four {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Hollywood_Sign.jpg/1280px-Hollywood_Sign.jpg);}
+.bg-five {background-image: url(http://www.travelandleisure.com/sites/default/files/styles/tnl_redesign_article_landing_page/public/1453920892/DUBAI-554088081-ABOVE0116.jpg?itok=dcoZnCrc);}
+.bg-six {background-image: url(http://blog.whitepages.com/wp-content/uploads/2015/04/san-franc.jpg);} */
+
+
+
+.parentgallery:hover .childgallery, .parentgallery:focus .childgallery {
+    -ms-transform: scale(1.09);
+    -moz-transform: scale(1.09);
+    -webkit-transform: scale(1.09);
+    -o-transform: scale(1.09);
+    transform: scale(1.09);
+}
+
+.parentgallery:hover .childgallery:before, .parentgallery:focus .childgallery:before {
+    display: block;
+}
+
+.parentgallery:hover a, .parentgallery:focus a {
+    display: block;
+}
+
+.childgallery:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(52,73,94,0.75);
+}
+
+/* Media Queries */
+@media screen and (max-width: 960px) {
+    .parentgallery {width: 100%; margin: 20px 0px}
+    .wrapper {padding: 20px 20px;}
+}
+
+
+
+
+/* 
+* {
+    box-sizing: border-box;
+  }
+  
+  
+  
+  
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+ 
+  .column {
+    -ms-flex: 25%; 
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  } */
+
+  

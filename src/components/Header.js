@@ -50,6 +50,7 @@ class Header extends Component {
                     <Nav.Link href="#features"><Link to="/">Profile</Link></Nav.Link>
                     <Nav.Link href="#features"><Link to="/">Sign in</Link></Nav.Link>
                     <Nav.Link href="#features"><Link to="/CartPage">Cart</Link></Nav.Link>
+                    <Nav.Link href="#features"><Link to="/Gallery">Gallery</Link></Nav.Link>
 
                     </Nav>
                     </Container>
