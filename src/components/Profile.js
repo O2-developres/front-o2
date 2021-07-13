@@ -24,14 +24,17 @@ class Profile extends Component {
   }
 // email= ${this.props.auth0.user.email}
   componentDidMount = async () => {  //here we need env for link also for eamil we need auth0 
-    let url = `http://localhost:8000/profile?email=anofal719@gmail.com`;
+    let url = `http://localhost:8000/profile?email=${this.props.auth0.user.email}`;
     const axiosData = await axios.get(url).catch(error=>{alert(error.message)});
     console.log(axiosData.data);
-
-    this.setState({
+    if(axiosData.data!==null){
+      this.setState({
+      
         listUserDAta: axiosData.data.userData,
         listFav:axiosData.data.favImg
     });
+    }
+    
   };
 //   ==========================  start for delete pic
   deletFav = (indx) => {
@@ -51,6 +54,7 @@ class Profile extends Component {
     axios.delete(`http://localhost:8000/profile/${indx}?email=${this.props.auth0.user.email}`)
       .then((res) => {
         this.setState({
+         
             listUserDAta: res.data.userData,
         });
       }).catch(error=>{alert(error.message)});
@@ -108,7 +112,7 @@ createPic=(e)=>{
 // email= ${this.props.auth0.user.email} also env for link
     e.preventDefault();
     const reqBody={
-        email:'anofal719@gmail.com',
+        email:this.props.auth0.user.email,
         img:this.state.img,
         nameImg:this.state.nameImg,
         description:this.state.description,
@@ -137,8 +141,8 @@ createPic=(e)=>{
         <header id="header">
           <div className="d-flex flex-column">
             <div className="profile">
-              <img src={ibrahemPic} />
-              <h1 className="text-light">Ibrahem</h1>
+              <img src={this.props.auth0.user.picture} />
+              <h1 className="text-light">{this.props.auth0.user.name}</h1>
               <div className="social-links mt-3 text-center">
                 <a href="#" className="twitter">
                   <FaTwitter />
@@ -185,10 +189,10 @@ createPic=(e)=>{
           }}
         >
           <div className="hero-container">
-            <h1>Ibrahem alomari</h1>
+            <h1>{this.props.auth0.user.name}</h1>
             <p>Artist</p>
             <div className="hero-img-contianer">
-              <img className="hero-img-main" src={ibrahemPic}></img>
+              <img className="hero-img-main" src={this.props.auth0.user.picture}/>
             </div>
           </div>
         </section>
@@ -227,7 +231,8 @@ createPic=(e)=>{
                         for
                         */}
 
-                        {this.state.listUserDAta.map((item, indx) => {
+                        {this.state.listUserDAta&&
+                        this.state.listUserDAta.map((item, indx) => {
                           return (
                             <>
                               <div
@@ -265,7 +270,9 @@ createPic=(e)=>{
                         
 
 
-                        {this.state.listFav.map((item,indx)=>{
+                        {
+                        this.state.listUserDAta&&
+                        this.state.listFav.map((item,indx)=>{
                             return (<>
                             
                             <div

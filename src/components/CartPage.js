@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from 'react-router-dom';
-import img1 from "../images/img3.jpg";
 import background from "../images/img8.jpg";
 import { Button, Container, Image } from "react-bootstrap";
 import "../CartPage.css";
