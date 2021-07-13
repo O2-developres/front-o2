@@ -29,4 +29,6 @@
 }
 .admin-contact-card{
     border: 4px solid orange;
+    width: 25rem;
+    margin: 5px;
 }

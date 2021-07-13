@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer';
-// import img1 from '../images/contactusimg2.jpg'
 import { Card, Col, Row, Button } from 'react-bootstrap';
 import { LightSpeed, Fade } from 'react-reveal/';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../css/aboutUs.css';
 import img1 from '../images/aseel pic1.jfif'
 import img3 from '../images/hasan.jpg'
@@ -13,9 +11,6 @@ import img5 from '../images/ahmad.jpg'
 
 
 
-
-
-import { Link } from 'react-router-dom';
 
 class AboutUs extends Component {
     render() {

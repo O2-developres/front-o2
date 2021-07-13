@@ -5,6 +5,7 @@ import "../CartPage.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import axios from "axios";
+import { withAuth0 } from "@auth0/auth0-react";
 
 export class Cart extends Component {
   constructor() {

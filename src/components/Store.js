@@ -35,11 +35,8 @@ class Store extends Component {
 
         
             this.setState({
-                listStore:axiosData4.data
+                listStore:axiosData4.data[0].userData
             })
-      
-        
-        console.log(this.state.listStore)
 
     }
 
@@ -99,13 +96,13 @@ class Store extends Component {
                                 return(<>
                                 
                                 <div className="profile--card" >
-                                <img src={item.userData.img} />
+                                <img src={item.img} />
                                 <div className="profile--info">
-                                <h1 className="profile--h1">{item.userData.nameImg}</h1>
-                                <p className="profile--p">{item.userData.priceImg}</p>
-                                <Cartmodel img={item.userData.img}
-                                            nameImg={item.userData.nameImg}
-                                            priceImg={item.userData.priceImg}/>
+                                <h1 className="profile--h1">{item.nameImg}</h1>
+                                <p className="profile--p">{item.priceImg}</p>
+                                <Cartmodel img={item.img}
+                                            nameImg={item.nameImg}
+                                            priceImg={item.priceImg}/>
                                 <StoreModal/>
 
                                
