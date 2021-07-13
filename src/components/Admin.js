@@ -6,18 +6,30 @@ import Header from "./Header";
 import axios from "axios";
 import { Container, Row, Alert, Tab, Nav, Col, Button,Card,ListGroup,ListGroupItem} from "react-bootstrap";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
-import ModalProfile from "./ModalProfile";
+
 class Admin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          listUserDAta: [],
-          listFav: [],
-          nameImg:'',
-          img:'',
-          description:'',
-          priceImg:'',
+          ListFeed:[],
+          listUsers:[]
         }};
+
+
+componentDidMount=async()=>{
+  const url =`http://localhost:8000/admin?email=${this.props.auth0.user.email}`
+  const axiosData=await axios.get(url).catch(error=>{alert(error.message)});
+
+  let url4 = `http://localhost:8000/store`;
+  const axiosData4 = await axios.get(url4).catch(error=>{alert(error.message)});
+
+  console.log(axiosData.data.contactUs)
+  console.log(axiosData4.data)
+  this.setState({
+    ListFeed:axiosData.data.contactUs,
+    listUsers:axiosData4.data
+  })
+}
     render() {
         return (
             <>
@@ -124,17 +136,30 @@ class Admin extends Component {
                             </Card>
                             </Row>
                       </Tab.Pane>
+
+
                       <Tab.Pane eventKey="second">
                           <Row>
-                            <Card className="admin-contact-card">
-                                <Card.Header>{this.props.auth0.user.name}</Card.Header>
+
+                            {
+                              this.state.ListFeed.map((item, indx) => {
+                                return (<>
+                                
+                                <Card className="admin-contact-card">
+                                <Card.Header>{`${item.firstName} ${item.lastName}`}</Card.Header>
                                 <Card.Body>
-                                    <Card.Title>{this.props.auth0.user.email}</Card.Title>
+                                    <Card.Title>{item.userEmail}</Card.Title>
                                     <Card.Text>
-                                        With supporting text below as a natural lead-in to additional content.
+                                       {item.message}
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
+                                
+                                
+                                </>)
+                               })
+                            }
+                            
                           </Row>
                       </Tab.Pane>
                     </Tab.Content>

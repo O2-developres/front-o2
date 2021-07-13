@@ -10,7 +10,6 @@ import img3 from '../images/hasan.jpg'
 import img4 from '../images/ibrahim.jpg'
 import img5 from '../images/ahmad.jpg'
 
-
 class AboutUs extends Component {
     render() {
         return (
