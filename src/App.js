@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import Profile from './components/Profile';
+import Store from './components/Store';
 class App extends Component {
   render() {
     console.log(this.props.auth0);
@@ -29,6 +30,9 @@ class App extends Component {
             </Route>
             <Route path="/CartPage">
               <CartPage/>
+            </Route>
+            <Route path="/Store">
+              <Store/>
             </Route>
             
           </Switch>
