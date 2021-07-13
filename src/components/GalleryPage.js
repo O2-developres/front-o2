@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Gallery_Card from './Gallery_Card'
-import img1 from '../Images/home-top1.jpg'
-import { Row } from 'react-bootstrap'
-import hornsdata from './data/hornsData.json'
+import { Row ,Button} from 'react-bootstrap'
 import './Gallery_Card.css'
+import axios from "axios";
+
 
  class GalleryPage extends Component {
    
@@ -13,11 +13,73 @@ import './Gallery_Card.css'
        super(props);
       
        this.state={
-           rand:''
+           rand:'',
+           paint:[]
        }
    }
-   
-  
+   componentDidMount=async()=>{
+    let url=`http://localhost:8000/gallary?q=modernism art`
+    const axiosData = await axios.get(url);
+    console.log(axiosData.data)
+    this.setState({
+        paint:axiosData.data
+    })
+
+   }
+//    ==========================================
+   famousArt= async()=>{
+    let url=`http://localhost:8000/gallary?q=famous art`
+    const axiosData = await axios.get(url);
+
+    this.setState({
+        paint:axiosData.data
+    })
+  }
+//   ======================================
+  expressionism= async()=>{
+    let url=`http://localhost:8000/gallary?q=expressionism art`
+    const axiosData = await axios.get(url);
+
+    this.setState({
+        paint:axiosData.data
+    })
+  }
+//   =======================================
+charcoal= async()=>{
+    let url=`http://localhost:8000/gallary?q=charcoal drawing`
+    const axiosData = await axios.get(url);
+
+    this.setState({
+        paint:axiosData.data
+    })
+  }
+//   =====================================
+drawing= async()=>{
+    let url=`http://localhost:8000/gallary?q=drawing `
+    const axiosData = await axios.get(url);
+
+    this.setState({
+        paint:axiosData.data
+    })
+  }
+//   ====================================
+  aerial= async()=>{
+    let url=`http://localhost:8000/gallary?q=aerial perspective art `
+    const axiosData = await axios.get(url);
+
+    this.setState({
+        paint:axiosData.data
+    })
+  }
+//   =====================================
+modernism= async()=>{
+    let url=`http://localhost:8000/gallary?q=modernism art `
+    const axiosData = await axios.get(url);
+
+    this.setState({
+        paint:axiosData.data
+    })
+  }
 
     render() {
      
@@ -29,11 +91,21 @@ import './Gallery_Card.css'
             
            <>
            <Header/>
-           <div className='top-gallery-card' >
+           <h1 style={{textAlign:'center',
+                        marginTop:'70px'}}>Gallery</h1>
+
+            <Button onClick={()=>{this.famousArt()}} style={{marginLeft:'40px'}}>famous Art</Button>
+            <Button onClick={()=>{this.expressionism()}} style={{marginLeft:'40px'}}>expressionism Art</Button>
+            <Button onClick={()=>{this.charcoal()}} style={{marginLeft:'40px'}}>charcoal drow</Button>
+            <Button onClick={()=>{this.drawing()}} style={{marginLeft:'40px'}}>drawing</Button>
+            <Button onClick={()=>{this.aerial()}} style={{marginLeft:'40px'}}>aerial</Button>
+            <Button onClick={()=>{this.modernism()}} style={{marginLeft:'40px'}}>modernism</Button>
+
+           <div className='top-gallery-card '  style={{marginLeft:'40px'}}>
                
-           <Row xs={1} md={4} className="g-3" >
+           <Row xs={1} md={6} className="g-3"  >
                {
-                    hornsdata.map((item , indx) =>{
+                    this.state.paint.map((item , indx) =>{
                       indx=temp;
                       let  months = ['500px', '300px', '700px'];
                       let  random = Math.floor(Math.random() * months.length)
@@ -41,13 +113,18 @@ import './Gallery_Card.css'
                       randWidth=months[random];
 
 
-                      return <Gallery_Card img={item.image_url} width={randWidth}/>
+                      return <Gallery_Card img={item.img} 
+                                        nameImg={item.name}width={randWidth} />
+                      
+                      
                     })
 
                }
           
            </Row>
+           <Footer/>
            </div>
+          
            </>
         )
     }

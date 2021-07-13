@@ -3,7 +3,7 @@ import { withAuth0 } from "@auth0/auth0-react";
 import "../Profile.css";
 import Header from "./Header";
 import axios from "axios";
-import { Container, Row, Tab, Nav, Col, Button } from "react-bootstrap";
+import { Container, Row, Tab, Nav, Col, Button,Modal } from "react-bootstrap";
 import "react-toastify/dist/ReactToastify.css";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import ModalProfile from "./ModalProfile";
@@ -21,7 +21,7 @@ class Profile extends Component {
 
     };
   }
-// email= ${this.props.auth0.user.email}
+
   componentDidMount = async () => {  //here we need env for link also for eamil we need auth0 
     let url = `http://localhost:8000/profile?email=${this.props.auth0.user.email}`;
     const axiosData = await axios.get(url).catch(error=>{alert(error.message)});
@@ -130,7 +130,14 @@ createPic=(e)=>{
   }
 //  ====================== end craete pic
 
+// ----------------- Show Modal Functions ---------------------------
+showModal = () => {
+  this.setState({ show: true });
+};
 
+hideModal = () => {
+  this.setState({ show: false });
+};
   render() {
     return (
       <div>
@@ -277,9 +284,7 @@ createPic=(e)=>{
                             
                             <div
                           className="profile--card"
-                          onClick={() => {
-                            this.handleModal();
-                          }}
+                          
                         >
                           <img src={item.img} />
                           <div className="profile--info">
@@ -329,8 +334,19 @@ createPic=(e)=>{
                             type="text"
                             placeholder="Price"
                             onChange={(e)=>{this.getInputPrice(e)}}/>
-                          <Button variant="success" type="submit">Add</Button>
+                          <Button variant="success" type="submit" onClick={this.showModal}>Add</Button>
                         </form>
+                        <Modal show={this.state.show} onHide={this.hideModal}>
+                    <Modal.Header>
+                    <Modal.Title><h2>Thank You</h2></Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                    <p>Your art was added </p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="secondary" onClick={this.hideModal}> Close</Button>
+                    </Modal.Footer>
+                </Modal>
                       </Tab.Pane>
                     </Tab.Content>
                   </Col>
