@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { withAuth0 } from "@auth0/auth0-react";
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 import {
     Navbar, 
     Container,
@@ -43,12 +46,19 @@ class Header extends Component {
                   }}
                 >
                     <Container>
-                    <Navbar.Brand href="#home"><Link to="/">O2 Arts</Link></Navbar.Brand>
+                    <Navbar.Brand ><Link to="/">O2 Arts</Link></Navbar.Brand>
                     <Nav className="me-auto">
                     <Nav.Link href="#home"><Link to="/">Home</Link></Nav.Link>
-                    <Nav.Link href="#pricing"><Link to="/">Store</Link></Nav.Link>
-                    <Nav.Link href="#features"><Link to="/">Profile</Link></Nav.Link>
-                    <Nav.Link href="#features"><Link to="/">Sign in</Link></Nav.Link>
+                    <Nav.Link href="#pricing"><Link to="/Store">Store</Link></Nav.Link>
+
+                    <Nav.Link ><Link to="/profile">Profile</Link></Nav.Link>
+                    
+
+                    <Nav.Link ><Link to="/CartPage">Cart</Link></Nav.Link>
+                    <Nav.Link ><Link to="/">
+                      {this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton/>}
+                      </Link></Nav.Link>
+                      <Nav.Link ><Link to="/Admin">admin</Link></Nav.Link>
                     </Nav>
                     </Container>
                 </Navbar>
@@ -57,4 +67,4 @@ class Header extends Component {
     }
 }
 
-export default Header
+export default withAuth0(Header) 
