@@ -106,7 +106,10 @@ class Store extends Component {
                                 <Cartmodel img={value.img}
                                             nameImg={value.nameImg}
                                             priceImg={value.priceImg}/>
-                                <StoreModal/>
+                                <StoreModal 
+                                img={value.img}
+                                nameImg={value.nameImg}
+                                />
 
                                
                                 

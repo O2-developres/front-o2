@@ -3,34 +3,27 @@ import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { Modal,Button } from 'react-bootstrap';
 
-class Cartmodel extends Component {
-
-
+class FavModel extends Component {
     constructor(props) {
         super(props);
-this.state={
-    show:false
-}
+        this.state={
+            show:false
+        }
     }
 
-
-
-    addToCart=()=>{
+    addToFav=()=>{
         const reqBody={
-                  nameImg: this.props.nameImg,
-                  img: this.props.img,
-                  priceImg: this.props.priceImg,
-                  email:this.props.auth0.user.email
+            email :this.props.auth0.user.email,
+            nameImg :this.props.nameImg,
+            img :this.props.img
                 }
-                axios.post(`http://localhost:8000/cart`,reqBody).then(res=>{
+                axios.post(`http://localhost:8000/favorite`,reqBody).then(res=>{
                     console.log(res.data)
                 })
                 this.setState({
                     show:true
                 })
-               
        }
-
        closeModel=()=>{
         this.setState({
             show:false
@@ -39,14 +32,14 @@ this.state={
     render() {
         return (
             <div>
-                <button className="profile--button update-btn" 
-                         onClick={()=>{this.addToCart()}} > to cart</button>
+                 <button className="profile--button update-btn" 
+                         onClick={()=>{this.addToFav()}} > to fav</button>
                 <Modal show={this.state.show} >
                     <Modal.Header>
                     <Modal.Title><h2>Thank You</h2></Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                    <p>Your Order has been sent to cart</p>
+                    <p>Your Order has been sent to favorite</p>
                     </Modal.Body>
                     <Modal.Footer>
                     <Button variant="secondary" onClick={()=>{this.closeModel()}}> Close</Button>
@@ -57,4 +50,4 @@ this.state={
     }
 }
 
-export default withAuth0(Cartmodel)
+export default withAuth0(FavModel)
