@@ -5,7 +5,7 @@ import { Card, Col, Row, Button } from 'react-bootstrap';
 import { LightSpeed} from 'react-reveal/';
 import '../css/aboutUs.css';
 import img1 from '../images/aseel pic1.jfif'
-import img2 from '../images/mayyadah.jpg'
+import img2 from '../images/mayada.jpg'
 import img3 from '../images/hasan.jpg'
 import img4 from '../images/ibrahim.jpg'
 import img5 from '../images/ahmad.jpg'
