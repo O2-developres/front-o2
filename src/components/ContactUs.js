@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import { withAuth0 } from "@auth0/auth0-react";
 import Header from './Header'
 import Footer from './Footer';
 import img1 from '../images/img11.jpg'
@@ -42,10 +43,9 @@ import { Container,Form,Button,Row,Modal } from 'react-bootstrap';
 
     createContact=(e)=>{
 
-//  email= ${this.props.auth0.user.email} also env for link
         e.preventDefault();
         const reqBody={
-            email:'anofal719@gmail.com',
+            email:'anofal719@gmail.com'||'ibrahem.omari96@gmail.com',
             firstName:this.state.firstName,
             lastName:this.state.lastName,
             message:this.state.message,
@@ -58,7 +58,11 @@ import { Container,Form,Button,Row,Modal } from 'react-bootstrap';
         }
           
         ).catch(error=>{alert(error.message)})
+        
+          this.setState({ show: true });
+        
         e.target.reset();
+
       }
 
          // ----------------- Show Modal Functions ---------------------------
@@ -102,7 +106,7 @@ import { Container,Form,Button,Row,Modal } from 'react-bootstrap';
                             <Form.Label className="form-text">Message</Form.Label>
                             <Form.Control className="form-control" placeholder="Enter Your Message" as="textarea" rows={3}  onChange={(e)=>{this.getInputmessage(e)}} required/>
                         </Form.Group>
-                        <Button className="contactus-form-button" variant="warning" type="submit" onClick={this.showModal}>Submit</Button>
+                        <Button className="contactus-form-button" variant="warning" type="submit" >Submit</Button>
                     </Form>
                   <br/> <br/>
                   
@@ -126,4 +130,4 @@ import { Container,Form,Button,Row,Modal } from 'react-bootstrap';
     }
 }
 
-export default ContactUs
+export default withAuth0(ContactUs)

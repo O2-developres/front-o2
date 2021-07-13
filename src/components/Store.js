@@ -35,7 +35,7 @@ class Store extends Component {
 
         
             this.setState({
-                listStore:axiosData4.data[0].userData
+                listStore:axiosData4.data
             })
 
     }
@@ -93,16 +93,19 @@ class Store extends Component {
                     <Row className="store-card-row">
                         {
                             this.state.listStore.map((item,indx)=>{
+
                                 return(<>
-                                
-                                <div className="profile--card" >
-                                <img src={item.img} />
+                                {
+                                    item.userData.map(value=>{
+                                        return(<>
+                                        <div className="profile--card" >
+                                <img src={value.img} />
                                 <div className="profile--info">
-                                <h1 className="profile--h1">{item.nameImg}</h1>
-                                <p className="profile--p">{item.priceImg}</p>
-                                <Cartmodel img={item.img}
-                                            nameImg={item.nameImg}
-                                            priceImg={item.priceImg}/>
+                                <h1 className="profile--h1">{value.nameImg}</h1>
+                                <p className="profile--p">{value.priceImg}</p>
+                                <Cartmodel img={value.img}
+                                            nameImg={value.nameImg}
+                                            priceImg={value.priceImg}/>
                                 <StoreModal/>
 
                                
@@ -111,6 +114,11 @@ class Store extends Component {
                                 </div>
 
                                 </div>
+                                        
+                                        </>)
+                                    })
+                                }
+                                
                                
                                 </>)
                                 
