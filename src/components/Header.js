@@ -46,18 +46,19 @@ class Header extends Component {
                   }}
                 >
                     <Container>
-                    <Navbar.Brand href="#home"><Link to="/">O2 Arts</Link></Navbar.Brand>
+                    <Navbar.Brand ><Link to="/">O2 Arts</Link></Navbar.Brand>
                     <Nav className="me-auto">
-                    <Nav.Link href="#home"><Link to="/">Home</Link></Nav.Link>
-                    <Nav.Link href="#pricing"><Link to="/">Store</Link></Nav.Link>
+                    <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                    <Nav.Link ><Link to="/">Store</Link></Nav.Link>
 
-                    <Nav.Link href="#features"><Link to="/profile">Profile</Link></Nav.Link>
+                    <Nav.Link ><Link to="/profile">Profile</Link></Nav.Link>
                     
 
-                    <Nav.Link href="#features"><Link to="/CartPage">Cart</Link></Nav.Link>
-                    <Nav.Link href="#features"><Link to="/">
+                    <Nav.Link ><Link to="/CartPage">Cart</Link></Nav.Link>
+                    <Nav.Link ><Link to="/">
                       {this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton/>}
                       </Link></Nav.Link>
+                      <Nav.Link ><Link to="/Admin">admin</Link></Nav.Link>
                     </Nav>
                     </Container>
                 </Navbar>

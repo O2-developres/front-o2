@@ -4,7 +4,6 @@ import "../Profile.css";
 import Header from "./Header";
 import axios from "axios";
 import { Container, Row, Alert, Tab, Nav, Col, Button } from "react-bootstrap";
-import "react-toastify/dist/ReactToastify.css";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import ibrahemPic from "../Images/ibrahem-profile.jpg";
 import ModalProfile from "./ModalProfile";
@@ -230,7 +229,7 @@ createPic=(e)=>{
                         
                         for
                         */}
-
+                        <Row>
                         {this.state.listUserDAta&&
                         this.state.listUserDAta.map((item, indx) => {
                           return (
@@ -262,12 +261,13 @@ createPic=(e)=>{
                               
                             </>
                           );
+                          
                         })}
-
+                      </Row>
                      
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        
+                      <Row>
 
 
                         {
@@ -300,7 +300,7 @@ createPic=(e)=>{
                             </>)
                         })}
                         
-                       
+                        </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="theard">
                         <form className="profile-add-form" onSubmit={(e)=>{this.createPic(e)}}>
