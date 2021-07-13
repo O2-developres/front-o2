@@ -3,10 +3,9 @@ import { withAuth0 } from "@auth0/auth0-react";
 import "../Profile.css";
 import Header from "./Header";
 import axios from "axios";
-import { Container, Row, Alert, Tab, Nav, Col, Button } from "react-bootstrap";
+import { Container, Row, Tab, Nav, Col, Button } from "react-bootstrap";
 import "react-toastify/dist/ReactToastify.css";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
-import ibrahemPic from "../Images/ibrahem-profile.jpg";
 import ModalProfile from "./ModalProfile";
 class Profile extends Component {
   constructor(props) {
@@ -305,22 +304,26 @@ createPic=(e)=>{
                       <Tab.Pane eventKey="theard">
                         <form className="profile-add-form" onSubmit={(e)=>{this.createPic(e)}}>
                           <input
+                          required
                             className="form-control form-control-lg"
                             type="text"
                             placeholder="Title"
                             onChange={(e)=>{this.getInputName(e)}}/>
                           <input
+                          required
                             className="form-control form-control-lg"
                             type="text"
                             placeholder="Description"
                             onChange={(e)=>{this.getInputDescrip(e)}}/>
                           <input
+                          required
                             className="form-control form-control-lg"
                             type="text"
                             placeholder="Image Url"
                             
                             onChange={(e)=>{this.getInputImg(e)}}/>
                           <input
+                          required
                             className="form-control form-control-lg"
                             type="text"
                             placeholder="Price"
