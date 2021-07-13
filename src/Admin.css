@@ -1,0 +1,34 @@
+.admin-card-body{
+    width: 100%;
+    display: flex;
+
+}
+.profile-user-name{
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    text-transform: capitalize;
+}
+
+.admin-card-img{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    box-shadow: 0 0 4px black;
+}
+.admin-card-list{
+    margin-top: 1rem;
+    border: 4px double orange;
+}
+.admin-card-item{
+    margin-top: 1rem;
+    border: none;
+    font-weight: 600;
+    margin-right: 5px;
+}
+.admin-contact-card{
+    border: 4px solid orange;
+    width: 25rem;
+    margin: 5px;
+}
