@@ -4,7 +4,7 @@ import "../Profile.css";
 import "../Admin.css";
 import Header from "./Header";
 import axios from "axios";
-import { Container, Row, Alert, Tab, Nav, Col, Button,Card,ListGroup,ListGroupItem} from "react-bootstrap";
+import {  Row,  Tab, Nav, Col,Card,ListGroup,ListGroupItem} from "react-bootstrap";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 
 class Admin extends Component {
@@ -23,8 +23,8 @@ componentDidMount=async()=>{
   let url4 = `http://localhost:8000/store`;
   const axiosData4 = await axios.get(url4).catch(error=>{alert(error.message)});
 
-  console.log(axiosData.data.contactUs)
-  console.log(axiosData4.data)
+  
+  
   this.setState({
     ListFeed:axiosData.data.contactUs,
     listUsers:axiosData4.data
@@ -120,20 +120,29 @@ componentDidMount=async()=>{
                   <Col sm={1}></Col>
                   <Col sm={10}>
                     {/*  */}
+
+
                     <Tab.Content>
                       <Tab.Pane eventKey="first">
                           <Row>
+                          {this.state.listUsers.map(item=>{
+                            return(<>
+                            
                             <Card>
                                 <Card.Body>
                                     <div className="admin-card-body">
                                     <img src={this.props.auth0.user.picture} className="admin-card-img"/>
-                                        <span className="profile-user-name">{this.props.auth0.user.name}</span>
+                                        <span className="profile-user-name">{item.name}</span>
                                     </div>
                                     <ListGroup className="list-group-flush admin-card-list">
-                                        <ListGroupItem ><span className="admin-card-item">Email:</span>{this.props.auth0.user.email}</ListGroupItem>   
+                                        <ListGroupItem ><span className="admin-card-item">Email:</span>{item.email}</ListGroupItem>   
                                     </ListGroup>
                                 </Card.Body>
                             </Card>
+                            </>)
+                            
+                          })}
+                            
                             </Row>
                       </Tab.Pane>
 

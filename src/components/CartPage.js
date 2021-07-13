@@ -19,62 +19,16 @@ export class Cart extends Component {
        priceImg:''
     };
   }
-//   getInputName=(e)=>{
-//     this.setState({
-//         imgName:e.target.value,
-//     })
-//   }
-//   getInputImg=(e)=>{
-//     this.setState({
-//         imgUrl:e.target.value,
-//     })
-//   }
-//   getPrice=(e)=>{
-//     this.setState({
-//         priceImg:e.target.value,
-//     })
-//   }
-//   //  =================== this function will used in store page 
-//   createBook= async(e)=>{
 
-//   //  email= ${this.props.auth0.user.email} also env for link 
-//     e.preventDefault();
-//     const reqBody={
-//       nameImg: this.state.imgName,
-//       img: this.state.imgUrl,
-//       priceImg:this.state.priceImg,
-//       email:this.props.auth0.user.email
-//     }
-//    let Data=await axios.post(`http://localhost:8000/cart`,reqBody)
-
-//     console.log(Data)
-//     this.setState({
-//         listUser:Data.data.cart
-//     })
-    
-
-// }
 // ======================================== end for function store 
 
   componentDidMount = async () => {
-    // let url = `http://localhost:8000/gallary?q=paint`;
-    // const axiosData = await axios.get(url);
 
-    // let url2 = `http://localhost:8000/news?q=america`;
-    // const axiosData2 = await axios.get(url2);
-    
-    // console.log(axiosData2);
-    // console.log(axiosData);
-
-
-
-   //  email= ${this.props.auth0.user.email} also env for link 
     let url3 = `http://localhost:8000/profile?email=${this.props.auth0.user.email}`;
     const axiosData3 = await axios.get(url3);
     console.log(axiosData3);
 
     this.setState({
-    //   listGallary: axiosData.data,
       listUser: axiosData3.data.cart,
     });
     
@@ -84,7 +38,6 @@ export class Cart extends Component {
   };
 //  ===============================  start for delete Cart
   deletCart = (indx) => {
-//  email= ${this.props.auth0.user.email} also env for link
     axios
       .delete(`http://localhost:8000/cart/${indx}?email=${this.props.auth0.user.email}`)
       .then((res) => {
