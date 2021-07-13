@@ -18,41 +18,41 @@ export class Cart extends Component {
        priceImg:''
     };
   }
-  getInputName=(e)=>{
-    this.setState({
-        imgName:e.target.value,
-    })
-  }
-  getInputImg=(e)=>{
-    this.setState({
-        imgUrl:e.target.value,
-    })
-  }
-  getPrice=(e)=>{
-    this.setState({
-        priceImg:e.target.value,
-    })
-  }
-  //  =================== this function will used in store page 
-  createBook= async(e)=>{
+//   getInputName=(e)=>{
+//     this.setState({
+//         imgName:e.target.value,
+//     })
+//   }
+//   getInputImg=(e)=>{
+//     this.setState({
+//         imgUrl:e.target.value,
+//     })
+//   }
+//   getPrice=(e)=>{
+//     this.setState({
+//         priceImg:e.target.value,
+//     })
+//   }
+//   //  =================== this function will used in store page 
+//   createBook= async(e)=>{
 
-  //  email= ${this.props.auth0.user.email} also env for link 
-    e.preventDefault();
-    const reqBody={
-      nameImg: this.state.imgName,
-      img: this.state.imgUrl,
-      priceImg:this.state.priceImg,
-      email:'anofal719@gmail.com'
-    }
-   let Data=await axios.post(`http://localhost:8000/cart`,reqBody)
+//   //  email= ${this.props.auth0.user.email} also env for link 
+//     e.preventDefault();
+//     const reqBody={
+//       nameImg: this.state.imgName,
+//       img: this.state.imgUrl,
+//       priceImg:this.state.priceImg,
+//       email:this.props.auth0.user.email
+//     }
+//    let Data=await axios.post(`http://localhost:8000/cart`,reqBody)
 
-    console.log(Data)
-    this.setState({
-        listUser:Data.data.cart
-    })
-    window.location.reload()
+//     console.log(Data)
+//     this.setState({
+//         listUser:Data.data.cart
+//     })
+    
 
-}
+// }
 // ======================================== end for function store 
 
   componentDidMount = async () => {
@@ -61,19 +61,14 @@ export class Cart extends Component {
 
     // let url2 = `http://localhost:8000/news?q=america`;
     // const axiosData2 = await axios.get(url2);
-    // let url4 = `http://localhost:8000/store`;
-    // const axiosData4 = await axios.get(url4);
-    // for (let i=0 ;i<10;i++ ){
-
-    //   console.log(axiosData4.data[i]);
-    // }
+    
     // console.log(axiosData2);
     // console.log(axiosData);
 
 
 
    //  email= ${this.props.auth0.user.email} also env for link 
-    let url3 = `http://localhost:8000/profile?email=anofal719@gmail.com`;
+    let url3 = `http://localhost:8000/profile?email=${this.props.auth0.user.email}`;
     const axiosData3 = await axios.get(url3);
     console.log(axiosData3);
 
@@ -90,13 +85,13 @@ export class Cart extends Component {
   deletCart = (indx) => {
 //  email= ${this.props.auth0.user.email} also env for link
     axios
-      .delete(`http://localhost:8000/cart/${indx}?email=anofal719@gmail.com`)
+      .delete(`http://localhost:8000/cart/${indx}?email=${this.props.auth0.user.email}`)
       .then((res) => {
         this.setState({
           listUser: res.data.cart,
         });
       });
-      window.location.reload()
+      
   };
 
   //  ===============================  end for delete Cart
@@ -164,18 +159,6 @@ export class Cart extends Component {
                   </>
                 );
               })}
-          <form onSubmit={(e)=>{this.createBook(e)}}>
-          <input type="text" onChange={(e)=>{this.getInputName(e)}} required placeholder='name '/><br/>
-
-          <input type="text" onChange={(e)=>{this.getInputImg(e)}} required placeholder='img '/>
-          <br/>
-
-          <input type="text" onChange={(e)=>{this.getPrice(e)}} required placeholder='price'/>
-          <br/>
-          
-          <Button variant="dark" type="submit" >add new img </Button>
-          
-        </form>
               <li className="collection-item">
                 <b>
                   Total:{this.state.total}
@@ -208,4 +191,4 @@ export class Cart extends Component {
   }
 }
 
-export default Cart;
+export default withAuth0(Cart);
