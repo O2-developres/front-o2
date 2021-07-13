@@ -229,7 +229,7 @@ createPic=(e)=>{
                         
                         for
                         */}
-
+                        <Row>
                         {this.state.listUserDAta&&
                         this.state.listUserDAta.map((item, indx) => {
                           return (
@@ -261,12 +261,13 @@ createPic=(e)=>{
                               
                             </>
                           );
+                          
                         })}
-
+                      </Row>
                      
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        
+                      <Row>
 
 
                         {
@@ -299,7 +300,7 @@ createPic=(e)=>{
                             </>)
                         })}
                         
-                       
+                        </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="theard">
                         <form className="profile-add-form" onSubmit={(e)=>{this.createPic(e)}}>

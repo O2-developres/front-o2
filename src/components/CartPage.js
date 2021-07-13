@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import background from "../images/img8.jpg";
-import { withAuth0 } from "@auth0/auth0-react";
-import { Button, Container, Image } from "react-bootstrap";
+import { Button, Container, Image, Modal } from "react-bootstrap";
 import "../CartPage.css";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -96,6 +95,16 @@ export class Cart extends Component {
   };
 
   //  ===============================  end for delete Cart
+
+     // ----------------- Show Modal Functions ---------------------------
+     showModal = () => {
+      this.setState({ show: true });
+    };
+  
+    hideModal = () => {
+      this.setState({ show: false });
+    };
+//  ------------------------------------------------------------------------
   render() {
     return (
       <>
@@ -157,10 +166,23 @@ export class Cart extends Component {
                 </b>
               </li>
               <hr />
-              <Button className="cheackout-button" variant="success" size="lg">
+              <Button  className="cheackout-button" variant="success" size="lg" onClick={this.showModal}>
                 Checkout
               </Button>
             </div>
+             {/* ------------------------------------ Add Modal ----------------------------------------------- */}
+
+             <Modal show={this.state.show} onHide={this.hideModal}>
+                    <Modal.Header>
+                    <Modal.Title><h2>Thank You</h2></Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                    <p>Your Order has been sent</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="secondary" onClick={this.hideModal}> Close</Button>
+                    </Modal.Footer>
+                </Modal>
           </Container>
         </div>
         <Footer/>
