@@ -35,7 +35,7 @@ class App extends Component {
             <Route path="/Store">
               <Store/>
             </Route>
-            
+           
           </Switch>
       </Router>
     </>
