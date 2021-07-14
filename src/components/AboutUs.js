@@ -56,7 +56,7 @@ class AboutUs extends Component {
                 </Row>
                 <Row>
                     <Card className='names cardplus'>
-                        <Card.Title > Members Names </Card.Title>
+                        <Card.Title className="title"> Members Names </Card.Title>
                     </Card>
                 </Row>
                 <Row>

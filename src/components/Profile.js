@@ -283,7 +283,7 @@ hideModal = () => {
                             return (<>
                             
                             <div
-                          className="profile--card"
+                          className="profile--card profile--card-fav"
                           
                         >
                           <img src={item.img} alt="imag"/>

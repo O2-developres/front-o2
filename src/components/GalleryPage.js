@@ -88,19 +88,20 @@ modernism= async()=>{
     
         let temp=0;
         return (
-            
            <>
            <Header/>
            <h1 style={{textAlign:'center',
-                        marginTop:'70px'}}>Gallery</h1>
-
-            <Button onClick={()=>{this.famousArt()}} style={{marginLeft:'40px'}}>famous Art</Button>
-            <Button onClick={()=>{this.expressionism()}} style={{marginLeft:'40px'}}>expressionism Art</Button>
-            <Button onClick={()=>{this.charcoal()}} style={{marginLeft:'40px'}}>charcoal drow</Button>
-            <Button onClick={()=>{this.drawing()}} style={{marginLeft:'40px'}}>drawing</Button>
-            <Button onClick={()=>{this.aerial()}} style={{marginLeft:'40px'}}>aerial</Button>
-            <Button onClick={()=>{this.modernism()}} style={{marginLeft:'40px'}}>modernism</Button>
-          
+                        marginTop:'70px',
+                        fontFamily:"'Roboto', sans-serif"
+                        }}>Gallery</h1>
+        <div className="gallary-filter-btn-group">
+            <Button onClick={()=>{this.famousArt()}} className="gallary-filter-btn">famous Art</Button>
+            <Button onClick={()=>{this.expressionism()}} className="gallary-filter-btn">expressionism Art</Button>
+            <Button onClick={()=>{this.charcoal()}} className="gallary-filter-btn">charcoal drow</Button>
+            <Button onClick={()=>{this.drawing()}} className="gallary-filter-btn">drawing</Button>
+            <Button onClick={()=>{this.aerial()}} className="gallary-filter-btn">aerial</Button>
+            <Button onClick={()=>{this.modernism()}} className="gallary-filter-btn">modernism</Button>
+            </div>
            <div className='top-gallery-card '  style={{marginLeft:'40px'}}>
                
            <Row xs={1} md={6} className="g-3"  >

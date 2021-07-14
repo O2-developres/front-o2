@@ -5,9 +5,10 @@
   .collection-item.avatar .title {
     font-size: 20px;
     font-weight: 500;
-    color: rgb(48, 10, 83);
+    color: hsl(323, 100%, 40%);
     display: block;
     margin-bottom: 20px;
+    text-transform: capitalize;
     
   }
   .collection .collection-item img{
@@ -21,7 +22,7 @@
     padding: 15px;
     padding-right: 800px;
     margin: .5rem 0 1rem 0;
-    border: 1px solid #ee6e73;
+    border: 1px solid hsl(323, 100%, 40%);
     border-radius: 2px;
     overflow: hidden;
     position: relative;
@@ -53,4 +54,32 @@
 .cheackout-button{
   /* background-color: rgb(48, 10, 83); */
   margin-left: 0;
+}
+
+.cart-total{
+  font-size: 1.2rem;
+  background-color: hsl(323, 100%, 40%);
+  padding: 10px;
+  color: white;
+  margin: 1rem;
+  border-radius: 7px;
+}
+.remove-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 12rem;
+}
+.first-collec{
+  border: red;
+}
+.cart-items-contianer{
+  margin-top: 0rem;
+  padding: 2rem;
+}
+.cart-items-contianer .collection:nth-child(1){
+  margin-top: 6rem;
+}
+.cart-check-btn{
+  margin: -4rem 0rem 4rem 56rem;
 }

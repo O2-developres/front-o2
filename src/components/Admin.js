@@ -6,6 +6,7 @@ import Header from "./Header";
 import axios from "axios";
 import {  Row,  Tab, Nav, Col,Card,ListGroup,ListGroupItem} from "react-bootstrap";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+import avatar from '../Images/user_avatar.png'
 
 class Admin extends Component {
     constructor(props) {
@@ -128,10 +129,10 @@ componentDidMount=async()=>{
                           {this.state.listUsers.map(item=>{
                             return(<>
                             
-                            <Card>
+                            <Card className="admin-cards">
                                 <Card.Body>
                                     <div className="admin-card-body">
-                                    <img src={this.props.auth0.user.picture} alt="img" className="admin-card-img"/>
+                                    <img src={avatar} alt="img" className="admin-card-img"/>
                                         <span className="profile-user-name">{item.name}</span>
                                     </div>
                                     <ListGroup className="list-group-flush admin-card-list">

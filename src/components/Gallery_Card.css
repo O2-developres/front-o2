@@ -132,4 +132,18 @@ margin-top: 50px;
     width: 100%;
   } */
 
-  
+.gallary-filter-btn-group{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.gallary-filter-btn{
+  margin: 2rem 2rem 2rem 0;
+  background-color: hsl(323, 100%, 25%);
+  border: none;
+  text-transform: uppercase;
+}
+.gallary-filter-btn:hover{
+  transform: scale(1.1);
+  background-color: hsl(323, 95%, 40%);
+}

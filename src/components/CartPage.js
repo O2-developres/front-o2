@@ -27,6 +27,11 @@ export class Cart extends Component {
     let url3 = `${process.env.REACT_APP_PORT}/profile?email=${this.props.auth0.user.email}`;
     const axiosData3 = await axios.get(url3);
     console.log(axiosData3);
+    axiosData3.data.cart.map(el=>{
+      return this.setState({
+        total:this.state.total+Number(el.price)
+      })
+    })
 
     this.setState({
       listUser: axiosData3.data.cart,
@@ -41,6 +46,16 @@ export class Cart extends Component {
     axios
       .delete(`${process.env.REACT_APP_PORT}/cart/${indx}?email=${this.props.auth0.user.email}`)
       .then((res) => {
+        res.data.cart.map(el=>{
+          return this.setState({
+            total:0?this.state.total+Number(el.price):0
+          })
+        })
+        res.data.cart.map(el=>{
+          return this.setState({
+            total:this.state.total+Number(el.price)
+          })
+        })
         this.setState({
           listUser: res.data.cart,
         });
@@ -72,17 +87,18 @@ export class Cart extends Component {
           }}
         >
           
-          <Container>
+          <Container className="cart-items-contianer">
          
 
-            
               {
-              
-              this.state.listUser.map((item, indx) => {
+                
+                this.state.listUser.map((item, indx) => {
                   
-                  this.setState({total:this.state.total+Number(item.price)})
-                return (
-                  <>
+                  
+                  return (
+                    <>
+                   
+                  
                     <div className="collection">
                       <li
                         className="collection-item avatar"
@@ -114,12 +130,11 @@ export class Cart extends Component {
                 );
               })}
               <li className="collection-item">
-                <b>
+                <b className="cart-total">
                   Total:{this.state.total}
                   $
                 </b>
               </li>
-              <hr />
               <div className="cart-check-btn">
               <Button  className="cheackout-button" variant="success" size="lg" onClick={this.showModal}>
                 Checkout
