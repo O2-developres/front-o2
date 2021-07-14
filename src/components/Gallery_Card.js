@@ -21,7 +21,7 @@ export class Gallery_Card extends Component {
       <>
         
           <div className="profile--card parentgallery" style={{margin:'20px'}}>
-            <img src={this.props.img}  className="childgallery" />
+            <img src={this.props.img} alt="imag" className="childgallery" />
             <div className="profile--info">
               <h1 className="profile--h1">{this.props.nameImg}</h1>
             

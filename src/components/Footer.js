@@ -26,7 +26,7 @@ class Footer extends Component {
               </Row>
               <hr className="break-line-footer"></hr>
               <Row className="full-width">
-              <Col xs={3}><img src={logo} style={{
+              <Col xs={3}><img alt="imag" src={logo} style={{
                 width:"6rem"
               }}/></Col>
                 <Col xs={3}>
