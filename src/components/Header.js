@@ -4,6 +4,7 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import logo from '../Images/logo.png'
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -51,7 +52,7 @@ class Header extends Component {
         >
           <Container>
             <Navbar.Brand>
-              <Link to="/">O2 Arts</Link>
+              <Link to="/"><img src={logo} className="o2art-logo"/></Link>
             </Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="#home">
@@ -64,20 +65,20 @@ class Header extends Component {
                 <Link to="/Store">Store</Link>
               </Nav.Link>
               {this.props.auth0.isAuthenticated &&
-                this.props.auth0.user.email !== "anofal719@gmail.com" && (
+                  this.props.auth0.user.email !== "ibrahem.omari96@gmail.com"&& (
                   <Nav.Link>
                     <Link to="/profile">Profile</Link>
                   </Nav.Link>
                 )}
-
+                
               {this.props.auth0.isAuthenticated &&
-                this.props.auth0.user.email !== "anofal719@gmail.com" && (
+                this.props.auth0.user.email !== "ibrahem.omari96@gmail.com" && (
                   <Nav.Link>
                     <Link to="/CartPage">Cart</Link>
                   </Nav.Link>
                 )}
               {this.props.auth0.isAuthenticated &&
-                (this.props.auth0.user.email == "anofal719@gmail.com"||this.props.auth0.user.email == "ibrahem.omari96@gmail.com") && (
+                (this.props.auth0.user.email == "ibrahem.omari96@gmail.com") && (
                   <Nav.Link>
                     <Link to="/Admin">admin</Link>
                   </Nav.Link>
@@ -93,6 +94,8 @@ class Header extends Component {
                 </Link>
               </Nav.Link>
             </Nav>
+            {this.props.auth0.isAuthenticated &&
+            <img className="header-user-pic" src={this.props.auth0.user.picture}/>}
           </Container>
         </Navbar>
       </>

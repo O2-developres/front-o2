@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Festive&family=Otomanopee+One&family=Roboto:wght@300&family=Rubik:ital@1&family=Uchen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 html,body{
   background-color: #ffffff;
   background-size: cover;
@@ -9,7 +10,7 @@ html,body{
 
   /*========== Colors ==========*/
   /* Change favorite color */
-  --hue-color: 20;
+  --hue-color: 323;
   /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
   /* HSL color mode */
@@ -64,6 +65,68 @@ html,body{
   --FF-Festive:'Festive', cursive;
   --FF-Uchen:'Uchen', serif;
   --FF-Roboto:'Roboto', sans-serif;
+  --FF-Bebas:'Bebas Neue', cursive;
+}
+
+/* logo */
+.o2art-logo{
+  width: 90px;
+  
+}
+.header-user-pic{
+  border-radius: 50%;
+  width: 2.5rem;
+  position: absolute;
+  right: 130px;
+}
+/* login & logout button */
+.login-btn,.logout-btn{
+  color: #FFF;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  margin-top: -6px;
+  right: 1rem;
+  position: absolute;
+  text-shadow: 0 0 6px  black,
+               0 0 8px  black,
+               0 0 2px  rgb(0, 0, 0) ;
+  font-weight: 600;
+  border: none;
+}
+.navbar-header .login-btn:hover,.logout-btn:hover{
+  color: rgb(0, 0, 0);
+  background-color: rgba(105, 2, 54, 0.26);
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+  font-weight: 600;
+}
+.login-btn svg,.logout-btn svg{
+  color: #7F004F;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0.157);
+}
+
+.home-carsl-h5{
+  font-size: 5rem;
+  font-family: var(--FF-Bebas);
+  transform: rotateX(45deg);
+  transform: rotateY(45deg);
+
+}
+/* about website section */
+.home-future-para{
+  margin-left: 2rem;
+  margin-top: 8rem;
+
+}
+.home-future-para-h3{
+  font-family: var(--FF-Bebas);
+  text-decoration: underline;
+
+}
+.home-future-p{
+  font-family: var(--FF-Uchen);
+  text-align: justify;
+  width: 22rem;
 }
 .break-line{
   width: 80%;
@@ -114,6 +177,7 @@ html,body{
 .home-headings h1{
   color: var(--first-color);
   font-family: var(--FF-Uchen);
+  text-shadow: 0 0 4px var(--first-color-alt);
 }
 .home-headings p{
   color: var(--first-color-second);
@@ -146,7 +210,7 @@ html,body{
   left: 40rem;
   top: 71rem;
 }
-.modal-content{
+.home-video-modal .modal-content{
   width:120%
 }
 .home-artistWork-section{
@@ -248,6 +312,9 @@ html,body{
   font-family: var(--FF-Uchen);
 }
 /* footer section */
+.contianer-footer{
+  margin-left: 5rem;
+}
 .footer{
   background-color: black;
   color: var(--first-color);
@@ -279,7 +346,7 @@ html,body{
   margin-right: 10px;
 }
 .footer-contact-list-social {
-  margin-left: -80px;
+  margin-left: -20px;
 }
 .footer-contact-list a{
   text-decoration: none;
@@ -291,7 +358,7 @@ html,body{
 }
 .footer-contact-list-social li{
   display: inline;
-  margin: 0 15px 0 30px;
+  margin: 0 20px 0 30px;
 }
 .footer-contact-list-social a{
   text-decoration: none;
@@ -304,7 +371,7 @@ html,body{
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-left: -30px;
+  margin-left: 45px;
 }
 .copy-right p{
   color: white;

@@ -44,7 +44,7 @@ class App extends Component {
             </Route>
             <Route path="/Admin">
             {this.props.auth0.isAuthenticated && 
-            this.props.auth0.user.email=='anofal719@gmail.com'&&
+            this.props.auth0.user.email=='ibrahem.omari96@gmail.com' &&
             <Admin/>}
               
             </Route>

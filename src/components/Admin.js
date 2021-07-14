@@ -17,10 +17,10 @@ class Admin extends Component {
 
 
 componentDidMount=async()=>{
-  const url =`http://localhost:8000/admin?email=${this.props.auth0.user.email}`
+  const url =`${process.env.REACT_APP_PORT}/admin?email=${this.props.auth0.user.email}`
   const axiosData=await axios.get(url).catch(error=>{alert(error.message)});
 
-  let url4 = `http://localhost:8000/store`;
+  let url4 = `${process.env.REACT_APP_PORT}/store`;
   const axiosData4 = await axios.get(url4).catch(error=>{alert(error.message)});
 
   

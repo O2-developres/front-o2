@@ -17,7 +17,7 @@ class FavModel extends Component {
             nameImg :this.props.nameImg,
             img :this.props.img
                 }
-                axios.post(`http://localhost:8000/favorite`,reqBody).then(res=>{
+                axios.post(`${process.env.REACT_APP_PORT}/favorite`,reqBody).then(res=>{
                     console.log(res.data)
                 })
                 this.setState({

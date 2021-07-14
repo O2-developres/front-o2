@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import { CgLogOut } from "react-icons/cg";
 import { Button } from "react-bootstrap";
 
 
@@ -10,8 +10,8 @@ const LogoutButton = () => {
 
   return (
 
-    <Button variant="warning"  onClick={() => logout({ returnTo: window.location.origin })}>
-      Log Out
+    <Button className="logout-btn" onClick={() => logout({ returnTo: window.location.origin })}>
+      Log Out <CgLogOut/>
     </Button>
 
 

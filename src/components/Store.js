@@ -28,7 +28,7 @@ class Store extends Component {
 
     componentDidMount = async () => {
 
-        let url4 = `http://localhost:8000/store`;
+        let url4 = `${process.env.REACT_APP_PORT}/store`;
         const axiosData4 = await axios.get(url4);
 
         console.log(axiosData4.data)
