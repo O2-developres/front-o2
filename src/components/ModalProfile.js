@@ -35,6 +35,7 @@ class ModalProfile extends Component {
             </Modal.Header>
             <Modal.Body className="profile-modal-body">
               <img
+              alt="imag"
                 className="profile-modal-img"
                 src={this.props.img}
               />

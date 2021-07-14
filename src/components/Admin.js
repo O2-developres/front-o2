@@ -40,19 +40,19 @@ componentDidMount=async()=>{
         <header id="header">
           <div className="d-flex flex-column">
             <div className="profile">
-              <img src={this.props.auth0.user.picture} />
+              <img src={this.props.auth0.user.picture} alt="img" />
               <h1 className="text-light">{this.props.auth0.user.name}</h1>
               <div className="social-links mt-3 text-center">
-                <a href="#" className="twitter">
+                <a href="#1" className="twitter">
                   <FaTwitter />
                 </a>
-                <a href="#" className="facebook">
+                <a href="#2" className="facebook">
                   <FaFacebook />
                 </a>
-                <a href="#" className="instagram">
+                <a href="#3" className="instagram">
                   <FaInstagram />
                 </a>
-                <a href="#" className="linkedin">
+                <a href="#4" className="linkedin">
                   <FaLinkedin />
                 </a>
               </div>
@@ -91,7 +91,7 @@ componentDidMount=async()=>{
             <h1>{this.props.auth0.user.name}</h1>
             <p>Admin</p>
             <div className="hero-img-contianer">
-              <img className="hero-img-main" src={this.props.auth0.user.picture}/>
+              <img className="hero-img-main" src={this.props.auth0.user.picture} alt="img"/>
             </div>
           </div>
         </section>
@@ -131,7 +131,7 @@ componentDidMount=async()=>{
                             <Card>
                                 <Card.Body>
                                     <div className="admin-card-body">
-                                    <img src={this.props.auth0.user.picture} className="admin-card-img"/>
+                                    <img src={this.props.auth0.user.picture} alt="img" className="admin-card-img"/>
                                         <span className="profile-user-name">{item.name}</span>
                                     </div>
                                     <ListGroup className="list-group-flush admin-card-list">

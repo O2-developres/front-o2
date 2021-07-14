@@ -81,7 +81,7 @@ import { Container,Form,Button,Modal } from 'react-bootstrap';
                 <Container className="container">
                     
                         <div class="div-in-contactus">
-                            <img class ="contactus-img" src={img1}  />
+                            <img class ="contactus-img" alt="imag" src={img1}  />
                             <p class="text-above-img1">
                                 Contact Us</p>
                                 <p class="text-above-img2">We'd Love To Hear From You</p>

@@ -89,7 +89,7 @@ export class Cart extends Component {
                         //    key={item.id}
                       >
                         <div className="item-img">
-                          <Image src={item.img} rounded height="160px" />
+                          <Image src={item.img} alt="img" rounded height="160px" />
                         </div>
 
                         <div className="item-desc">

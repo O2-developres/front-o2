@@ -147,19 +147,19 @@ hideModal = () => {
         <header id="header">
           <div className="d-flex flex-column">
             <div className="profile">
-              <img src={this.props.auth0.user.picture} />
+              <img src={this.props.auth0.user.picture} alt="imag" />
               <h1 className="text-light">{this.props.auth0.user.name}</h1>
               <div className="social-links mt-3 text-center">
-                <a href="#" className="twitter">
+                <a href="#5" className="twitter">
                   <FaTwitter />
                 </a>
-                <a href="#" className="facebook">
+                <a href="#6" className="facebook">
                   <FaFacebook />
                 </a>
-                <a href="#" className="instagram">
+                <a href="#7" className="instagram">
                   <FaInstagram />
                 </a>
-                <a href="#" className="linkedin">
+                <a href="#8" className="linkedin">
                   <FaLinkedin />
                 </a>
               </div>
@@ -198,7 +198,7 @@ hideModal = () => {
             <h1>{this.props.auth0.user.name}</h1>
             <p>Artist</p>
             <div className="hero-img-contianer">
-              <img className="hero-img-main" src={this.props.auth0.user.picture}/>
+              <img className="hero-img-main" src={this.props.auth0.user.picture} alt="imag"/>
             </div>
           </div>
         </section>
@@ -245,7 +245,7 @@ hideModal = () => {
                                 className="profile--card"
                                 
                               >
-                                <img src={item.img} />
+                                <img src={item.img} alt="imag" />
                                 <div className="profile--info">
                                   <h1 className="profile--h1">
                                     {item.nameImg}
@@ -286,7 +286,7 @@ hideModal = () => {
                           className="profile--card"
                           
                         >
-                          <img src={item.img} />
+                          <img src={item.img} alt="imag"/>
                           <div className="profile--info">
                             <h1 className="profile--h1">{item.nameImg}</h1>
                             <ModalProfile  img={item.img} 

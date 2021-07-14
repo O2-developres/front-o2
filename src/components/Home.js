@@ -107,7 +107,7 @@ class Home extends Component {
                     </Row>
                     <Row className="home-video-section">
                         <Button className="home-video-btn" onClick={()=>{this.handleModal()}}>
-                        <img className="home-video-img" src={img4}/>
+                        <img className="home-video-img" alt="imag" src={img4}/>
                         <FontAwesomeIcon icon={faPlayCircle} className=""/>
                         </Button>
                         <Modal show={this.state.show} className="home-video-modal" onHide={()=>this.handleModal()}>
@@ -233,7 +233,7 @@ class Home extends Component {
                         <Col>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Body>
-                                    <Card.Img  
+                                    <Card.Img  alt="imag"
                                         src={artistPic1}
                                     />
                                     <Card.Title>
@@ -252,7 +252,7 @@ class Home extends Component {
                         <Col>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Body>
-                                <Card.Img  
+                                <Card.Img   alt="imag"
                                         src={artistPic2}
                                     />
                                     <Card.Title>
@@ -272,7 +272,7 @@ class Home extends Component {
                             <Card style={{ width: '18rem' }}>
                                 <Card.Body>
                                     <Card.Title>
-                                    <Card.Img  
+                                    <Card.Img   alt="imag"
                                         src={artistPic3}
                                     />
                                         <LightSpeed left cascade>
@@ -290,7 +290,7 @@ class Home extends Component {
                         <Col>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Body>
-                                <Card.Img  
+                                <Card.Img   alt="imag"
                                         src={artistPic4}
                                     />
                                     <Card.Title>

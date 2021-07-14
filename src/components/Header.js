@@ -52,7 +52,7 @@ class Header extends Component {
         >
           <Container>
             <Navbar.Brand>
-              <Link to="/"><img src={logo} className="o2art-logo"/></Link>
+              <Link to="/"><img src={logo} alt="imag" className="o2art-logo"/></Link>
             </Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="#home">
@@ -95,7 +95,7 @@ class Header extends Component {
               </Nav.Link>
             </Nav>
             {this.props.auth0.isAuthenticated &&
-            <img className="header-user-pic" src={this.props.auth0.user.picture}/>}
+            <img alt="imag" className="header-user-pic" src={this.props.auth0.user.picture}/>}
           </Container>
         </Navbar>
       </>

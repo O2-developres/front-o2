@@ -62,7 +62,7 @@ class AboutUs extends Component {
                 <Row>
                     <Col>
                         <Card   className="cardplus"style={{ width: '16rem' }}>
-                            <Card.Img variant="top" src={img1} />
+                            <Card.Img variant="top" src={img1} alt="img" />
                             <Card.Body>
                                 <Card.Title style={{ marginLeft: "8vh" }}>
                                     <LightSpeed left cascade>
@@ -85,7 +85,7 @@ class AboutUs extends Component {
                     </Col>
                     <Col>
                         <Card className="cardplus"style={{ width: '16rem' }}>
-                            <Card.Img variant="top" src={img2} style={{height:'280px'}} />
+                            <Card.Img variant="top" src={img2} alt="img" style={{height:'280px'}} />
                             <Card.Body>
                                 <Card.Title style={{ marginLeft: "3vh" }}>
                                     <LightSpeed left cascade>
@@ -110,7 +110,7 @@ class AboutUs extends Component {
                 <Row>
                     <Col>
                         <Card  className="cardplus"style={{ width: '16rem' }}>
-                            <Card.Img variant="top" src={img3} />
+                            <Card.Img variant="top" alt="img" src={img3} />
 
                             <Card.Body>
                                 <Card.Title style={{ marginLeft: "5vh" }}>
@@ -134,7 +134,7 @@ class AboutUs extends Component {
                     </Col>
                     <Col>
                         <Card  className="cardplus"style={{ width: '16rem' }}>
-                            <Card.Img variant="top" src={img4} />
+                            <Card.Img variant="top" alt="img" src={img4} />
 
                             <Card.Body>
                                 <Card.Title style={{ marginLeft: "4vh" }}>
@@ -161,7 +161,7 @@ class AboutUs extends Component {
                     <Col>
 
                         <Card className='mayada cardplus' style={{ width: '16rem' }}>
-                            <Card.Img variant="top" src={img5} />
+                            <Card.Img variant="top" alt="img" src={img5} />
 
                             <Card.Body>
                                 <Card.Title style={{ marginLeft: "8vh" }}>

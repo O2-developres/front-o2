@@ -25,6 +25,7 @@ class StoreModal extends Component {
                         <img 
                             className="profile-modal-img"
                             src={this.props.img}
+                            alt="imag"
                         />
                     </Modal.Body>
                 </Modal>

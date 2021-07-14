@@ -99,7 +99,7 @@ class Store extends Component {
                                     item.userData.map(value=>{
                                         return(<>
                                         <div className="profile--card" >
-                                <img src={value.img} />
+                                <img src={value.img} alt="imag" />
                                 <div className="profile--info">
                                 <h1 className="profile--h1">{value.nameImg}</h1>
                                 <p className="profile--p">{value.priceImg}</p>
