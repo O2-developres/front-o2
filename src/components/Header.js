@@ -78,7 +78,7 @@ class Header extends Component {
                   </Nav.Link>
                 )}
               {this.props.auth0.isAuthenticated &&
-                (this.props.auth0.user.email == "ibrahem.omari96@gmail.com") && (
+                (this.props.auth0.user.email === "ibrahem.omari96@gmail.com") && (
                   <Nav.Link>
                     <Link to="/Admin">admin</Link>
                   </Nav.Link>
