@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import Gallery_Card from './Gallery_Card'
+import GalleryCard from './GalleryCard'
 import { Row ,Button} from 'react-bootstrap'
 import './Gallery_Card.css'
 import axios from "axios";
@@ -113,7 +113,7 @@ modernism= async()=>{
                       randWidth=months[random];
 
 
-                      return <Gallery_Card img={item.img} 
+                      return <GalleryCard img={item.img} 
                                         nameImg={item.name}width={randWidth} />
                       
                       
