@@ -28,7 +28,7 @@ export class Cart extends Component {
     const axiosData3 = await axios.get(url3);
     console.log(axiosData3);
     axiosData3.data.cart.map(el=>{
-      this.setState({
+      return this.setState({
         total:this.state.total+Number(el.price)
       })
     })
@@ -47,12 +47,12 @@ export class Cart extends Component {
       .delete(`${process.env.REACT_APP_PORT}/cart/${indx}?email=${this.props.auth0.user.email}`)
       .then((res) => {
         res.data.cart.map(el=>{
-          this.setState({
+          return this.setState({
             total:0?this.state.total+Number(el.price):0
           })
         })
         res.data.cart.map(el=>{
-          this.setState({
+          return this.setState({
             total:this.state.total+Number(el.price)
           })
         })
