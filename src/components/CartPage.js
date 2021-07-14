@@ -80,7 +80,7 @@ export class Cart extends Component {
               
               this.state.listUser.map((item, indx) => {
                   
-                  this.state.total+=Number(item.price)
+                  this.setState({total:this.state.total+Number(item.price)})
                 return (
                   <>
                     <div className="collection">
