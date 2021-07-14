@@ -11,9 +11,9 @@ import {
     Button,
     Carousel,
     Col,
-    Card
+    Card,
 } from 'react-bootstrap'
-
+import { Link } from "react-router-dom";
 import img1 from '../Images/home-top1.jpg'
 import img2 from '../Images/home-top2.jpg'
 import img3 from '../Images/home-top3.jpg'
@@ -24,6 +24,9 @@ import artistPic1 from '../Images/artist1.jpg'
 import artistPic2 from '../Images/artist2.jpg'
 import artistPic3 from '../Images/artist3.jpg'
 import artistPic4 from '../Images/artist4.jpg'
+import homeSlide1 from '../Images/home-slide1.png'
+import homeSlide2 from '../Images/home-slide2.png'
+import homeSlide3 from '../Images/home-slide3.png'
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -44,17 +47,17 @@ class Home extends Component {
                         <Carousel variant="dark" controls="false">
                             <Carousel.Item>
                             <img className="carousel-ineer-img"
-                                    src={img1}
+                                    src={img2}
                                     alt="First slide"
                                 />
                                 <img
                                 className="d-block"
-                                src={img1} 
+                                src={img2} 
                                 alt="First slide"
                                 />
                                 <Carousel.Caption>
-                                <h5>First slide label</h5>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <h5 className="home-carsl-h5">Draw</h5>
+                                
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -68,23 +71,22 @@ class Home extends Component {
                                 alt="Second slide"
                                 />
                                 <Carousel.Caption>
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h5 className="home-carsl-h5">Creative</h5>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
                             <img className="carousel-ineer-img"
-                                    src={img2}
+                                    src={img1}
                                     alt="First slide"
                                 />
                                 <img
                                 className="d-block "
-                                src={img2}
+                                src={img1}
                                 alt="Third slide"
                                 />
                                 <Carousel.Caption>
-                                <h5>Third slide label</h5>
-                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                <h5 className="home-carsl-h5">Share</h5>
+                               
                                 </Carousel.Caption>
                             </Carousel.Item>
                             </Carousel>
@@ -99,14 +101,16 @@ class Home extends Component {
                         <p>
                             “I found I could say things with color and shapes that I couldn’t say any other way—things I had no words for.”
                         </p>
-                        <Button className="home-discover-btn">Discover</Button>
+                        <Link to="/Gallery">
+                        <Button className="home-discover-btn" >Discover</Button>
+                        </Link>
                     </Row>
                     <Row className="home-video-section">
                         <Button className="home-video-btn" onClick={()=>{this.handleModal()}}>
                         <img className="home-video-img" src={img4}/>
                         <FontAwesomeIcon icon={faPlayCircle} className=""/>
                         </Button>
-                        <Modal show={this.state.show} onHide={()=>this.handleModal()}>
+                        <Modal show={this.state.show} className="home-video-modal" onHide={()=>this.handleModal()}>
                             <Modal.Body>
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/eXFsKIdHi3o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </Modal.Body>
@@ -166,8 +170,8 @@ class Home extends Component {
                                 <Col >
                                     <Fade left>
                                         <div className="home-future-para">
-                                            <h3 className="home-future-para-h3">Profile</h3>
-                                            <p className="home-future-p">sub-title</p>
+                                            <h3 className="home-future-para-h3">Simple, attractive and efficient design</h3>
+                                            <p className="home-future-p">Professionally designed that make your work truly shine with complete customization and thousands of design variations. Create a unique website with our intuitive design editor</p>
                                         </div>
                                     </Fade>
                                 </Col>
@@ -175,7 +179,7 @@ class Home extends Component {
                                     <Fade right>
                                     <img
                                         className="d-block w-100 home-future-img"
-                                        src="https://html.sammy-codes.com/images/background.jpg"
+                                        src={homeSlide1}
                                         alt="Third slide"
                                         />
                                     </Fade >
@@ -186,7 +190,7 @@ class Home extends Component {
                                     <Fade left>
                                         <img
                                             className="d-block w-100 home-future-img"
-                                            src="https://html.sammy-codes.com/images/background.jpg"
+                                            src={homeSlide2}
                                             alt="Third slide"
                                             />
                                     </Fade>
@@ -194,8 +198,8 @@ class Home extends Component {
                                 <Col>
                                     <Fade right>
                                         <div className="home-future-para">
-                                                <h3 className="home-future-para-h3">Posts</h3>
-                                                <p className="home-future-p">sub-title</p>
+                                                <h3 className="home-future-para-h3">Add Your works</h3>
+                                                <p className="home-future-p">Showcase your best work with Online  Website and run your business like a pro with Workflow.</p>
                                             </div>
                                     </Fade >
                                 </Col>
@@ -204,8 +208,8 @@ class Home extends Component {
                                 <Col>
                                     <Fade left>
                                         <div className="home-future-para">
-                                            <h3 className="home-future-para-h3">Cart</h3>
-                                            <p className="home-future-p">sub-title</p>
+                                            <h3 className="home-future-para-h3">Sell and fulfill globally with ecommerce shops for photographers & artists</h3>
+                                            <p className="home-future-p">Sell all kinds of products, prints, packages, Lightroom presets, and digital products in your store. Our trusted print labs will handle the production and shipping directly to your customers.</p>
                                         </div>
                                     </Fade>
                                 </Col>
@@ -213,7 +217,7 @@ class Home extends Component {
                                     <Fade right>
                                     <img
                                         className="d-block w-100 home-future-img"
-                                        src="https://html.sammy-codes.com/images/background.jpg"
+                                        src={homeSlide3}
                                         alt="Third slide"
                                         />
                                     </Fade >

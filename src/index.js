@@ -7,8 +7,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
   <Auth0Provider
-    domain='dev-h4cgetrn.us.auth0.com'
-    clientId='IhgRD9Hc0Tmsul4oRii0E8ZnlD7Yy8sN'
+    domain={process.env.REACT_APP_AUTH0_DOMAIN}
+    clientId={process.env.REACT_APP_AUTH0_ID}
     redirectUri={window.location.origin}
   >
     <App />

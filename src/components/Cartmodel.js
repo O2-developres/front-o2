@@ -22,7 +22,7 @@ this.state={
                   priceImg: this.props.priceImg,
                   email:this.props.auth0.user.email
                 }
-                axios.post(`http://localhost:8000/cart`,reqBody).then(res=>{
+                axios.post(`${process.env.REACT_APP_PORT}/cart`,reqBody).then(res=>{
                     console.log(res.data)
                 })
                 this.setState({

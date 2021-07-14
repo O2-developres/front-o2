@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer';
-import { Card, Col, Row, Button } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import { LightSpeed} from 'react-reveal/';
 import '../css/aboutUs.css';
 import img1 from '../images/aseel pic1.jfif'

@@ -18,7 +18,7 @@ import axios from "axios";
        }
    }
    componentDidMount=async()=>{
-    let url=`http://localhost:8000/gallary?q=modernism art`
+    let url=`${process.env.REACT_APP_PORT}/gallary?q=modernism art`
     const axiosData = await axios.get(url);
     console.log(axiosData.data)
     this.setState({
@@ -28,7 +28,7 @@ import axios from "axios";
    }
 //    ==========================================
    famousArt= async()=>{
-    let url=`http://localhost:8000/gallary?q=famous art`
+    let url=`${process.env.REACT_APP_PORT}/gallary?q=famous art`
     const axiosData = await axios.get(url);
 
     this.setState({
@@ -37,7 +37,7 @@ import axios from "axios";
   }
 //   ======================================
   expressionism= async()=>{
-    let url=`http://localhost:8000/gallary?q=expressionism art`
+    let url=`${process.env.REACT_APP_PORT}/gallary?q=expressionism art`
     const axiosData = await axios.get(url);
 
     this.setState({
@@ -46,7 +46,7 @@ import axios from "axios";
   }
 //   =======================================
 charcoal= async()=>{
-    let url=`http://localhost:8000/gallary?q=charcoal drawing`
+    let url=`${process.env.REACT_APP_PORT}/gallary?q=charcoal drawing`
     const axiosData = await axios.get(url);
 
     this.setState({
@@ -55,7 +55,7 @@ charcoal= async()=>{
   }
 //   =====================================
 drawing= async()=>{
-    let url=`http://localhost:8000/gallary?q=drawing `
+    let url=`${process.env.REACT_APP_PORT}/gallary?q=drawing `
     const axiosData = await axios.get(url);
 
     this.setState({
@@ -64,7 +64,7 @@ drawing= async()=>{
   }
 //   ====================================
   aerial= async()=>{
-    let url=`http://localhost:8000/gallary?q=aerial perspective art `
+    let url=`${process.env.REACT_APP_PORT}/gallary?q=aerial perspective art `
     const axiosData = await axios.get(url);
 
     this.setState({
@@ -73,7 +73,7 @@ drawing= async()=>{
   }
 //   =====================================
 modernism= async()=>{
-    let url=`http://localhost:8000/gallary?q=modernism art `
+    let url=`${process.env.REACT_APP_PORT}/gallary?q=modernism art `
     const axiosData = await axios.get(url);
 
     this.setState({
@@ -100,7 +100,7 @@ modernism= async()=>{
             <Button onClick={()=>{this.drawing()}} style={{marginLeft:'40px'}}>drawing</Button>
             <Button onClick={()=>{this.aerial()}} style={{marginLeft:'40px'}}>aerial</Button>
             <Button onClick={()=>{this.modernism()}} style={{marginLeft:'40px'}}>modernism</Button>
-
+          
            <div className='top-gallery-card '  style={{marginLeft:'40px'}}>
                
            <Row xs={1} md={6} className="g-3"  >
@@ -122,8 +122,8 @@ modernism= async()=>{
                }
           
            </Row>
-           <Footer/>
            </div>
+           <Footer/>
           
            </>
         )

@@ -23,7 +23,7 @@ class Profile extends Component {
   }
 
   componentDidMount = async () => {  //here we need env for link also for eamil we need auth0 
-    let url = `http://localhost:8000/profile?email=${this.props.auth0.user.email}`;
+    let url = `${process.env.REACT_APP_PORT}/profile?email=${this.props.auth0.user.email}`;
     const axiosData = await axios.get(url).catch(error=>{alert(error.message)});
     console.log(axiosData.data);
     if(axiosData.data!==null){
@@ -38,7 +38,7 @@ class Profile extends Component {
 //   ==========================  start for delete pic
   deletFav = (indx) => {
 // email= ${this.props.auth0.user.email}
-    axios.delete(`http://localhost:8000/favorite/${indx}?email=${this.props.auth0.user.email}`)
+    axios.delete(`${process.env.REACT_APP_PORT}/favorite/${indx}?email=${this.props.auth0.user.email}`)
       .then((res) => {
         this.setState({
             listFav:res.data.favImg
@@ -50,7 +50,7 @@ class Profile extends Component {
 
   deletpicture = (indx) => {
 // email= ${this.props.auth0.user.email}
-    axios.delete(`http://localhost:8000/profile/${indx}?email=${this.props.auth0.user.email}`)
+    axios.delete(`${process.env.REACT_APP_PORT}/profile/${indx}?email=${this.props.auth0.user.email}`)
       .then((res) => {
         this.setState({
          
@@ -75,7 +75,7 @@ class Profile extends Component {
         priceImg:"10000"
       
     }
-    axios.put(`http://localhost:8000/profile/${index}`,reqBody).then(res=>{
+    axios.put(`${process.env.REACT_APP_PORT}/profile/${index}`,reqBody).then(res=>{
       this.setState({
         listUserDAta: res.data.userData,
       })
@@ -117,7 +117,7 @@ createPic=(e)=>{
         description:this.state.description,
         priceImg:this.state.priceImg,
     }
-    axios.post(`http://localhost:8000/profile`,reqBody).then(res=>{
+    axios.post(`${process.env.REACT_APP_PORT}/profile`,reqBody).then(res=>{
       this.setState({
         listUserDAta: res.data.userData,
 

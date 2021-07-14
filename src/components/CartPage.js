@@ -24,7 +24,7 @@ export class Cart extends Component {
 
   componentDidMount = async () => {
 
-    let url3 = `http://localhost:8000/profile?email=${this.props.auth0.user.email}`;
+    let url3 = `${process.env.REACT_APP_PORT}/profile?email=${this.props.auth0.user.email}`;
     const axiosData3 = await axios.get(url3);
     console.log(axiosData3);
 
@@ -39,7 +39,7 @@ export class Cart extends Component {
 //  ===============================  start for delete Cart
   deletCart = (indx) => {
     axios
-      .delete(`http://localhost:8000/cart/${indx}?email=${this.props.auth0.user.email}`)
+      .delete(`${process.env.REACT_APP_PORT}/cart/${indx}?email=${this.props.auth0.user.email}`)
       .then((res) => {
         this.setState({
           listUser: res.data.cart,
@@ -62,6 +62,7 @@ export class Cart extends Component {
   render() {
     return (
       <>
+      <Header />
         <div
           className="background-cart-img"
           style={{
@@ -70,10 +71,9 @@ export class Cart extends Component {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <Header />
+          
           <Container>
          
-            <div className="container-div">
 
             
               {
@@ -120,10 +120,11 @@ export class Cart extends Component {
                 </b>
               </li>
               <hr />
+              <div className="cart-check-btn">
               <Button  className="cheackout-button" variant="success" size="lg" onClick={this.showModal}>
                 Checkout
               </Button>
-            </div>
+              </div>
              {/* ------------------------------------ Add Modal ----------------------------------------------- */}
 
              <Modal show={this.state.show} onHide={this.hideModal}>

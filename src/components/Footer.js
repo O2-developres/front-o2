@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Navbar,
+import {
     Container,
     Row,
     Col,
@@ -11,12 +11,13 @@ import { faHome } from '@fortawesome/free-solid-svg-icons/faHome'
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons/faMailBulk'
 import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone'
 import { faFax } from '@fortawesome/free-solid-svg-icons/faFax'
+import logo from '../Images/logo.png'
 import { FaCopyright,FaFacebookSquare ,FaTwitterSquare,FaLinkedin,FaGithubSquare} from 'react-icons/fa';
 class Footer extends Component {
     render() {
         return (
             <footer  className="footer">
-            <Container>
+            <Container className="contianer-footer">
               <Row className="full-width footer-title">
                 <Col xs={3}>O2 Arts</Col>
                 <Col xs={3}>Conatct</Col>
@@ -25,7 +26,9 @@ class Footer extends Component {
               </Row>
               <hr className="break-line-footer"></hr>
               <Row className="full-width">
-              <Col xs={3}>Logo</Col>
+              <Col xs={3}><img src={logo} style={{
+                width:"6rem"
+              }}/></Col>
                 <Col xs={3}>
                   <ul className="footer-contact-list">
                     <li>
@@ -98,7 +101,7 @@ class Footer extends Component {
                     </li>
                   </ul>
               </Col>
-                  <Col xs={4}></Col>
+                  <Col xs={1}></Col>
               </Row>
               <hr className="break-line-footer"></hr>
               <Row>

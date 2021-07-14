@@ -5,7 +5,7 @@ import Header from './Header'
 import Footer from './Footer';
 import img1 from '../images/img11.jpg'
 import '../css/ContactUs.css';
-import { Container,Form,Button,Row,Modal } from 'react-bootstrap';
+import { Container,Form,Button,Modal } from 'react-bootstrap';
 
  class ContactUs extends Component {
 
@@ -53,7 +53,7 @@ import { Container,Form,Button,Row,Modal } from 'react-bootstrap';
 
             
         }
-        axios.post(`http://localhost:8000/admin`,reqBody).then(res=>{
+        axios.post(`${process.env.REACT_APP_PORT}/admin`,reqBody).then(res=>{
           console.log(res.data)
         }
           
