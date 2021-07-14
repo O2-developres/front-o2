@@ -31,6 +31,10 @@ height: 700px;
     color: black;
     font-size: 30px;
 }
+.form-section{
+  width: 76rem;
+
+}
   .mb-3{
     text-shadow: 2px 2px rgba(228, 199, 103, 0.548);
     background-color: antiquewhite;
@@ -53,6 +57,35 @@ height: 700px;
     background-color: rgba(255, 196, 0, 0.829);
     border: rgba(255, 196, 0, 0.829);
     color: black;
-    margin-left: 54px;
+    margin-left: 20rem;
   }
   
+  .right-section{
+    position: absolute;
+    top: 49rem;
+    left: 39rem;
+    width: 40rem;
+    padding: 2rem;
+    text-align: left;
+    word-spacing: 1rem;
+  }
+  .right-section h1{
+    text-align: justify;
+    font-size: 1.9rem;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.233);
+    text-shadow: 0 0 4px black;
+  }
+  .contactus-right-divs{
+    border-bottom: 4px solid black;
+    margin-top: 1.5rem;
+  }
+  .contactus-right-divs h3{
+    font-size: 1.5rem;
+    text-shadow: 0 0 8px rgba(199, 199, 199, 0.746);
+  }
+  .contactus-right-divs p a{
+    margin-right: 4rem;
+  }
+  .contactus-right-divs p a:nth-child(4){
+    margin-right: 5.7rem;
+  }

@@ -166,7 +166,7 @@ class Home extends Component {
                     </Row>
                     <Row>
                         <Container className="home-future">
-                            <Row>
+                            <Row className="home-future-row">
                                 <Col >
                                     <Fade left>
                                         <div className="home-future-para">
@@ -185,7 +185,7 @@ class Home extends Component {
                                     </Fade >
                                 </Col>
                             </Row>
-                            <Row>
+                            <Row className="home-future-row">
                                 <Col>
                                     <Fade left>
                                         <img
@@ -204,7 +204,7 @@ class Home extends Component {
                                     </Fade >
                                 </Col>
                             </Row>
-                            <Row>
+                            <Row className="home-future-row">
                                 <Col>
                                     <Fade left>
                                         <div className="home-future-para">

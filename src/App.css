@@ -276,6 +276,10 @@ html,body{
 
 
 }
+.home-future-row{
+  width: 119%;
+  padding: 4rem;
+}
 .navbar-header a{
   color: #FFF;
   text-decoration: none;

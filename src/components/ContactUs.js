@@ -88,12 +88,13 @@ import { Container,Form,Button,Modal } from 'react-bootstrap';
                         </div>
                    
                 <br/> <br/>
+                
                 <Form className="form-section" onSubmit={(e)=>{this.createContact(e)}}>
                         <Form.Group className="mb-3" controlId="formBasicEmail" >
                             <Form.Label className="form-text" >First Name *</Form.Label>
                             <Form.Control className="form-control" type="text" placeholder="First Name"  onChange={(e)=>{this.getInputfirstName(e)}} required/>
                         </Form.Group> 
-
+                          
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className="form-text">Last Name *</Form.Label>
                             <Form.Control className="form-control" type="text" placeholder="Last Name"  onChange={(e)=>{this.getInputlastName(e)}} required/>
@@ -124,6 +125,33 @@ import { Container,Form,Button,Modal } from 'react-bootstrap';
                     </Modal.Footer>
                 </Modal>
                 </Container>
+                {/* <Container className="right-section">
+                      <h1>Choice Screening strives to provide the best service possible with every contact! </h1>
+                      <div className="contactus-right-divs">
+                      <h3>Support</h3>
+                      <p>support@tune.com</p>
+                      </div>
+                      <div className="contactus-right-divs">
+                      <h3>Direct Contact</h3>
+                      <p>
+                        <ul>
+                          <li>Jordan - Amman</li>
+                          <li>O2.company@email.com</li>
+                          <li>+962-9999-999</li>
+                          <li>+962-9999-999</li>
+                        </ul>
+                      </p>
+                      </div>
+                      <div className="contactus-right-divs">
+                      <h3>Social Linke</h3>
+                      <p>
+                        <a href="">Facebook</a>
+                        <a href="">Instagram</a><br/>
+                        <a href="">Twiter</a>
+                        <a href="">LinkdIn</a><br/>
+                      </p>
+                      </div>
+                </Container> */}
                 <Footer/>
             </>
         )
