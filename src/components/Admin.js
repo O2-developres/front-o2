@@ -4,9 +4,10 @@ import "../Profile.css";
 import "../Admin.css";
 import Header from "./Header";
 import axios from "axios";
-import {  Row,  Tab, Nav, Col,Card,ListGroup,ListGroupItem} from "react-bootstrap";
+import {  Row,  Tab, Nav, Col,Card,ListGroup,ListGroupItem,Button} from "react-bootstrap";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import avatar from '../Images/user_avatar.png'
+
 
 class Admin extends Component {
     constructor(props) {
@@ -30,6 +31,13 @@ componentDidMount=async()=>{
     ListFeed:axiosData.data.contactUs,
     listUsers:axiosData4.data
   })
+}
+deleteUser=async(email)=>{
+  const url=`${process.env.REACT_APP_PORT}/adminuser?email=${email}`;
+  const data= await axios.delete(url);
+  this.setState({
+    listUsers:data.data
+  });
 }
     render() {
         return (
@@ -139,6 +147,10 @@ componentDidMount=async()=>{
                                         <ListGroupItem ><span className="admin-card-item">Email:</span>{item.email}</ListGroupItem>   
                                     </ListGroup>
                                 </Card.Body>
+                                <Card.Footer>
+                                <Button variant="danger" onClick={()=>this.deleteUser(item.email)}>Remove this user</Button>
+                                </Card.Footer>
+                                
                             </Card>
                             </>)
                             
