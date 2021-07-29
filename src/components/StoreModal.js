@@ -18,7 +18,7 @@ class StoreModal extends Component {
     render() {
         return (
             <>
-                <Button className="profile--button show-btn" variant="warning" onClick={()=>this.handleModal()}>Show</Button>
+                <Button className="profile--button update-btn" variant="warning" onClick={()=>this.handleModal()}>Show</Button>
                   <Modal className="profile-modal" show={this.state.show} onHide={()=>this.handleModal()} closeButton>
                     <Modal.Header className="profile-modal-header" closeButton><h3>{this.props.nameImg}</h3></Modal.Header>
                     <Modal.Body className="profile-modal-body">

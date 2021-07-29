@@ -9,11 +9,15 @@ class Cartmodel extends Component {
     constructor(props) {
         super(props);
 this.state={
-    show:false
+    show:false,
+    show2:false,
+    
 }
     }
 
-
+    handleModal(){
+        this.setState({show2:!this.state.show2})
+    }
 
     addToCart=()=>{
         const reqBody={
@@ -36,11 +40,12 @@ this.state={
             show:false
         })
        }
+       
     render() {
         return (
-            <div>
+            <>
                 <button className="profile--button update-btn" 
-                         onClick={()=>{this.addToCart()}} > to cart</button>
+                         onClick={()=>{this.addToCart()}}  style={{display:'inline' ,margin:'0'}}> to cart</button>
                 <Modal show={this.state.show} >
                     <Modal.Header>
                     <Modal.Title><h2>Thank You</h2></Modal.Title>
@@ -52,7 +57,21 @@ this.state={
                     <Button variant="secondary" onClick={()=>{this.closeModel()}}> Close</Button>
                     </Modal.Footer>
                 </Modal>
-            </div>
+
+                <Button className="profile--button update-btn" variant="warning" onClick={()=>this.handleModal()}>Show</Button>
+                  <Modal className="profile-modal" show={this.state.show2} onHide={()=>this.handleModal()} closeButton>
+                    <Modal.Header className="profile-modal-header" closeButton><h3>{this.props.nameImg}</h3></Modal.Header>
+                    <Modal.Body className="profile-modal-body">
+                        <img 
+                            className="profile-modal-img"
+                            src={this.props.img}
+                            alt="imag"
+                        />
+                    </Modal.Body>
+                </Modal>
+                
+                
+            </>
         )
     }
 }
