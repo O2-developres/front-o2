@@ -16,7 +16,7 @@ import { Container,Form,Button,Modal } from 'react-bootstrap';
           firstName:'',
           lastName:'',
           userEmail:'',
-    
+          show:false
         };
       }
 
@@ -45,7 +45,7 @@ import { Container,Form,Button,Modal } from 'react-bootstrap';
 
         e.preventDefault();
         const reqBody={
-            email:'anofal719@gmail.com'||'ibrahem.omari96@gmail.com',
+            email:'ibrahem.omari96@gmail.com'||"anofal719@gmail.com",
             firstName:this.state.firstName,
             lastName:this.state.lastName,
             message:this.state.message,
@@ -55,11 +55,12 @@ import { Container,Form,Button,Modal } from 'react-bootstrap';
         }
         axios.post(`${process.env.REACT_APP_PORT}/admin`,reqBody).then(res=>{
           console.log(res.data)
+          
         }
           
         ).catch(error=>{alert(error.message)})
         
-          this.setState({ show: true });
+        this.setState({ show: true });
         
         e.target.reset();
 
@@ -125,33 +126,7 @@ import { Container,Form,Button,Modal } from 'react-bootstrap';
                     </Modal.Footer>
                 </Modal>
                 </Container>
-                {/* <Container className="right-section">
-                      <h1>Choice Screening strives to provide the best service possible with every contact! </h1>
-                      <div className="contactus-right-divs">
-                      <h3>Support</h3>
-                      <p>support@tune.com</p>
-                      </div>
-                      <div className="contactus-right-divs">
-                      <h3>Direct Contact</h3>
-                      <p>
-                        <ul>
-                          <li>Jordan - Amman</li>
-                          <li>O2.company@email.com</li>
-                          <li>+962-9999-999</li>
-                          <li>+962-9999-999</li>
-                        </ul>
-                      </p>
-                      </div>
-                      <div className="contactus-right-divs">
-                      <h3>Social Linke</h3>
-                      <p>
-                        <a href="">Facebook</a>
-                        <a href="">Instagram</a><br/>
-                        <a href="">Twiter</a>
-                        <a href="">LinkdIn</a><br/>
-                      </p>
-                      </div>
-                </Container> */}
+                
                 <Footer/>
             </>
         )

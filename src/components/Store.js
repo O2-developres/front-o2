@@ -3,7 +3,6 @@ import "../Store.css";
 import axios from "axios";
 import Header from './Header';
 import Footer from './Footer';
-import StoreModal from './StoreModal';
 import { withAuth0 } from "@auth0/auth0-react";
 import { 
     Container,
@@ -40,6 +39,18 @@ class Store extends Component {
 
     }
 
+    deleteItem = (value) => {
+        // email= ${this.props.auth0.user.email}
+        const id=value._id
+        const email=value.email
+            axios.delete(`${process.env.REACT_APP_PORT}/admin/${id}?email=${email}`)
+              .then((res) => {
+                this.setState({
+                    listStore:res.data
+                })
+              }).catch(error=>{alert(error.message)});
+             
+          };
 
  
     render() {
@@ -96,23 +107,32 @@ class Store extends Component {
 
                                 return(<>
                                 {
-                                    item.userData.map(value=>{
+                                    item.userData.map((value,index)=>{
                                         return(<>
-                                        <div className="profile--card store-cards" >
+                                <div className="profile--card store-cards" >
                                 <img src={value.img} alt="imag" />
                                 <div className="profile--info">
                                 <h1 className="profile--h1">{value.nameImg}</h1>
-                                <p className="profile--p">{value.priceImg}</p>
+                                <p className="profile--p">  ${value.priceImg}</p>
+                                <p className="profile--p"> by :{item.email}</p>
+
                                 <Cartmodel img={value.img}
                                             nameImg={value.nameImg}
-                                            priceImg={value.priceImg}/>
-                                <StoreModal 
+                                            priceImg={value.priceImg}
+                                            email={item.email}
+                                           
+                                            />
+                                {/* <StoreModal 
                                 img={value.img}
                                 nameImg={value.nameImg}
-                                />
+                                /> */}
 
                                
-                                
+{
+                    this.props.auth0.isAuthenticated &&
+                    (this.props.auth0.user.email === ("ibrahem.omari96@gmail.com")) &&
+                    <button  className="profile--button update-btn" onClick={()=>{this.deleteItem(item)}}>delete</button>
+                }
                                 
                                 </div>
 
